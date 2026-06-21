@@ -3,3 +3,6 @@
 
 /workspace/project/*
 !/workspace/project/.gitkeep
+
+/workspace/template/
+/workspace/project.properties
