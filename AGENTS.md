@@ -17,7 +17,7 @@ Use this mode only when the user explicitly asks to change this process reposito
 - Files under `guidelines/`
 - Files under `stages/`
 - Workspace structure
-- The template submodule reference
+- Template source configuration
 
 In this mode:
 
@@ -36,7 +36,7 @@ In this mode:
 - Follow the approved guidelines and stage definitions.
 - Store generated documentation under `workspace/documentation/`.
 - Modify source code only inside the nested mod repository.
-- Treat the template submodule as read-only.
+- Treat runtime template clones as disposable input and never modify the configured upstream repository.
 
 If the work mode is ambiguous, ask the user before editing files.
 
@@ -51,27 +51,28 @@ README.md
 AGENTS.md
 guidelines/
 stages/
-template/
+references/
+setup/
 workspace/
 ```
 
 Do not modify it during mod development.
 
-### Template Submodule
+### Template Source
 
-The canonical template is located at:
+The default template source is configured in:
 
 ```text
-template/mah-mod-template/
+setup/template-defaults.properties
 ```
 
-Use it as a reference for expected project structure and build conventions.
+During Initialization, the configured template is cloned into:
 
-Do not:
+```text
+workspace/template/
+```
 
-- Develop the final mod inside the submodule.
-- Commit project-specific changes to the submodule.
-- Update the submodule revision unless explicitly requested.
+This runtime clone is ignored by the process repository and is used only as source material. Do not develop the final mod inside it or copy its Git history into the final project.
 
 ### Project Documentation
 
@@ -144,9 +145,10 @@ The development stages are:
 2. Feasibility Research
 3. Requirements Definition
 4. Architecture Definition
-5. Implementation Plan
-6. Implementation
-7. Packaging and Release Preparation
+5. Project Initialization
+6. Implementation Plan
+7. Implementation
+8. Packaging and Release Preparation
 
 Work on only one stage at a time.
 
@@ -218,7 +220,7 @@ Do not place project-specific documents in:
 
 - `guidelines/`
 - `stages/`
-- The template submodule
+- Runtime template clones
 - The root of the process repository
 
 Do not invent missing information to fill a document. Omit nonapplicable sections or mark unresolved decisions explicitly.
@@ -254,7 +256,7 @@ The project owner performs all CurseForge publication actions.
 
 ## Git Safety
 
-The process repository, template submodule, and mod repository have separate Git histories.
+The process repository and mod repository have separate Git histories. Runtime template history must never be copied into the mod repository.
 
 Before running Git commands:
 
@@ -283,7 +285,7 @@ Explicit permission is required before:
 - Committing
 - Pushing
 - Opening or merging a pull request
-- Updating the template submodule
+- Changing the configured template source or ref
 - Uploading files
 - Publishing a release
 - Modifying external services

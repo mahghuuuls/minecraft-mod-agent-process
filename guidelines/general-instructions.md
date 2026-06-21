@@ -3,7 +3,7 @@
 ## Platform
 - All mods target Minecraft Forge 1.12.2.
 - CurseForge is the only release platform.
-- Use `mah-mod-template` as the canonical structure for new mods and migrations.
+- Use the template repository configured in `setup/template-defaults.properties` as the canonical structure for new mods and migrations.
 - Follow the template README and build conventions.
 - Use the template's modern Gradle and Java development environment.
 - Released mods must remain compatible with Java 8 unless explicitly stated otherwise.

@@ -1,5 +1,4 @@
-# Packaging and Release
-
+# Packaging and Release Preparation
 ## Purpose
 
 Prepare the completed mod for users, validate the exact distributable artifact, finalize user-facing documentation and assets, and publish the approved release to CurseForge.

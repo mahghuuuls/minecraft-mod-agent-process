@@ -6,11 +6,8 @@ Prefer version-specific and primary sources. These links are starting points for
 
 ## Project Resources
 
-- [Mahghuuuls Mod Template](https://github.com/mahghuuuls/mah-mod-template)  
-  Canonical template for new mod projects.
-
 - [CleanroomMC ForgeDevEnv](https://github.com/CleanroomMC/ForgeDevEnv)  
-  Upstream development environment used by the personal template.
+  Default upstream template for new mod projects.
 
 ## Cleanroom
 
