@@ -4,7 +4,7 @@ These standards apply to implementation work across all mod projects. Project-sp
 
 ## General Design
 
-- Optimize for correctness, readability, maintainability, and Minecraft 1.12.2 compatibility.
+- Optimize for correctness, readability, maintainability, Minecraft 1.12.2 compatibility, and the approved loader/runtime targets.
 - Give classes and components clear, cohesive responsibilities.
 - Keep dependencies intentional and minimize coupling between unrelated behavior.
 - Prefer composition over inheritance when it produces a clearer design.
@@ -26,19 +26,19 @@ These standards apply to implementation work across all mod projects. Project-sp
 
 ## Java
 
-- Write code that remains valid for the project's Java 8 runtime target.
-- Do not use post-Java-8 runtime APIs.
+- Write code that remains valid for the project's approved Java runtime target.
+- Do not use APIs newer than the approved runtime target.
 - Use modern syntax only when `use_modern_java_syntax` is explicitly enabled.
 - Prefer explicit, readable types when inference would obscure domain meaning.
 - Handle nullable Minecraft and mod integration values defensively where absence is valid.
 - Use concise comments only when intent, constraints, or non-obvious behavior cannot be expressed clearly through code.
 
-## Forge and Sidedness
+## Loader Integration and Sidedness
 
 - Keep authoritative gameplay behavior on the logical server unless the requirement is explicitly client-side.
 - Never load `net.minecraft.client.*` classes from common or dedicated-server paths.
 - Use sided initialization mechanisms only when they serve actual client-only or server-only responsibilities.
-- Respect canceled Forge events and select event priority deliberately.
+- Respect cancelable events and choose event priority deliberately when the selected loader provides those mechanisms.
 - Avoid global event handlers that accumulate unrelated responsibilities.
 - Use the appropriate tracked or synchronized Minecraft APIs for state observed by clients.
 - Consider fake players, missing registry entries, modded entities, absent worlds, and null damage or action sources where relevant.
@@ -86,7 +86,7 @@ These standards apply to implementation work across all mod projects. Project-sp
 - Treat compilation as necessary but insufficient evidence of correctness.
 - Use automated tests for isolated logic when they provide useful feedback.
 - Do not require strict TDD for behavior that depends on the Minecraft runtime.
-- Verify Forge lifecycle, rendering, world state, entity AI, networking, Mixins, and compatibility in an appropriate Minecraft environment.
+- Verify the selected loader lifecycle, rendering, world state, entity AI, networking, transformations or Mixins, and compatibility in an appropriate Minecraft environment.
 - Check dedicated-server safety whenever shared or client-related code changes.
 - Verify default and unusual but valid configuration combinations.
 - Include focused manual scenarios for gameplay behavior that cannot be meaningfully automated.

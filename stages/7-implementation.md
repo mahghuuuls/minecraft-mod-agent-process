@@ -61,7 +61,7 @@ Do not:
 - Silently change the architecture
 - Perform unrelated refactoring
 - Add speculative abstractions for hypothetical future needs
-- Prepare the final README, changelog, icon, or CurseForge page
+- Prepare the final README, changelog, icon, or distribution-platform page
 - Publish or release the mod
 - Perform maintenance work outside the current project scope
 
@@ -130,7 +130,7 @@ Use automated tests when behavior can be isolated meaningfully, such as:
 
 Use in-game verification when behavior depends on:
 
-- Forge lifecycle events
+- Loader lifecycle events
 - Rendering
 - Entity AI
 - World state
@@ -312,4 +312,4 @@ The Implementation stage is complete when:
 - No required issue remains Backlog, Ready, In Progress, Review, or Blocked.
 - The project owner approves the implemented mod for Release Presentation.
 
-Completion does not include preparing user-facing documentation, creating release assets, building the final distributable release, or publishing to CurseForge.
+Completion does not include preparing user-facing documentation, creating release assets, building the final distributable release, or publishing to a distribution platform.

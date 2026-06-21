@@ -45,7 +45,7 @@ Establish:
 Do not attempt to define:
 
 - Technical feasibility
-- Forge APIs or integration mechanisms
+- Loader APIs or integration mechanisms
 - Dependencies beyond established defaults
 - Detailed behavior and edge cases
 - Code organization or architecture

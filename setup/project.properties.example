@@ -1,11 +1,26 @@
-# Copy this file to workspace/project.properties and replace the example values.
-# For Initial Development, this file may be deferred until the empty repository exists.
-# For Existing Project Adoption or Change Cycle, identify the existing repository.
-project_repository_url=https://github.com/mahghuuuls/example-mod.git
-project_directory_name=example-mod
+# Copy this file to workspace/project.properties only after replacing required values.
+# For Initial Development, this file may be deferred until repository identity is known.
+# Existing Project Adoption and Change Cycle identify the existing repository.
+project_repository_url=
+project_directory_name=
 
-# Optional per-project overrides:
-# template_repository_url=https://github.com/CleanroomMC/ForgeDevEnv.git
-# template_repository_ref=master
+# Project platform and distribution decisions:
+mod_loader=
+supported_runtimes=
+distribution_platforms=curseforge
+
+# Approved template for Initial Development:
+template_repository_url=
+template_repository_ref=
+
+# Project identity:
+root_package=
+mod_authors=
+minecraft_username=
+
+# Optional project-specific overrides:
+# preferred_development_java_version=25
+# target_java_version=8
 # project_default_branch=main
+# use_modern_java_syntax=false
 # license=MIT

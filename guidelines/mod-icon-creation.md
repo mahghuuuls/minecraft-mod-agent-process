@@ -45,7 +45,7 @@ Do not:
 - Copy protected characters, logos, or another project's icon
 - Reproduce an identifiable artist's style on request
 - Assume an internet image is licensed for reuse
-- Include Minecraft, CurseForge, or another creator's branding as the primary artwork
+- Include Minecraft, a distribution platform, or another creator's branding as the primary artwork
 - Commit reference images to the final mod unless their license and purpose require it
 
 When ownership or permission is unclear, use only abstract qualities such as palette, contrast, or composition and create original forms.
@@ -216,7 +216,7 @@ Text should be omitted by default because it becomes unreadable and image models
 
 Verify current destination requirements during Release Presentation.
 
-For CurseForge, prepare an original square PNG. The current safe export is exactly 400x400 pixels; do not use WebP. The image must not be a blank single-color square or copied project/game artwork.
+For each approved distribution platform, verify current image requirements and prepare a compliant export. For CurseForge specifically, the current safe export is an original 400x400 PNG; do not use WebP or blank/copied artwork.
 
 Also prepare the in-mod asset at the resolution and path required by the project's metadata. It may share the approved design but must be validated in the actual mod list or UI where it appears.
 

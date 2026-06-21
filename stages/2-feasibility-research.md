@@ -20,7 +20,7 @@ This stage performs research. It does not write or test implementation code.
 Establish:
 
 - Whether each high-level feature appears technically feasible
-- Which Minecraft, Forge, and Cleanroom capabilities are relevant
+- Which Minecraft, loader, runtime, and distribution-platform capabilities are relevant
 - Which existing mod libraries could support the implementation
 - Whether required integration points appear accessible
 - Which dependencies would be required or optional
@@ -32,7 +32,7 @@ Establish:
 
 ## In Scope
 
-- Researching Minecraft 1.12.2, Forge, Cleanroom, and relevant mods
+- Researching Minecraft 1.12.2, candidate loaders, compatible runtimes, and relevant mods
 - Inspecting documentation, APIs, source code, and existing implementations
 - Finding libraries that provide relevant capabilities
 - Evaluating library compatibility with project defaults
@@ -73,7 +73,7 @@ Act as a technical researcher.
 - Avoid assuming that information for newer Minecraft versions applies to 1.12.2.
 - Search for existing libraries before assuming functionality must be developed from scratch.
 - Check each candidate library against the project defaults.
-- Evaluate whether candidate libraries are maintained, accessible, legally usable, and suitable for distribution through CurseForge.
+- Evaluate whether candidate libraries are maintained, accessible, legally usable, and suitable for the approved distribution platforms.
 - Identify required and transitive dependencies.
 - Compare possible approaches only far enough to establish feasibility and major trade-offs.
 - Challenge unrealistic assumptions and unsupported expectations.
@@ -90,13 +90,13 @@ For each relevant library, investigate:
 
 - Purpose and relevant capabilities
 - Minecraft 1.12.2 compatibility
-- Forge and Cleanroom compatibility
+- Selected loader and runtime compatibility
 - Required dependencies
 - Client, server, or shared usage
 - License and redistribution restrictions
 - Source-code and documentation availability
 - Maintenance status
-- CurseForge availability
+- Availability through approved distribution channels
 - Known limitations
 - Apparent suitability for the project
 

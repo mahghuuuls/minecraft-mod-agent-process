@@ -25,7 +25,7 @@ Establish:
 - Package boundaries
 - Dependency directions
 - Important classes and interfaces
-- Forge and Cleanroom integration points
+- Selected loader and runtime integration points
 - Client, server, and shared-code separation
 - Configuration, networking, and persistence approaches
 - External library and mod integrations
@@ -42,7 +42,7 @@ Establish:
 - Dependency rules
 - Important classes and interfaces
 - Selected libraries and dependencies
-- Forge lifecycle integration
+- Loader lifecycle integration
 - Event handling boundaries
 - Client and server separation
 - Network communication
@@ -157,7 +157,7 @@ Minor and self-evident choices do not require separate decision records.
 4. Identify major components and ownership boundaries.
 5. Evaluate relevant libraries and integration approaches.
 6. Define package organization and dependency directions.
-7. Define Forge lifecycle and event integration.
+7. Define loader lifecycle and event integration.
 8. Define client, server, and shared-code boundaries.
 9. Define configuration, networking, persistence, and external integrations where applicable.
 10. Describe important runtime and data flows.
@@ -179,7 +179,7 @@ Produce a Markdown document named `workspace/documentation/architecture.md` cont
 6. **Components and Responsibilities**
 7. **Dependency Rules**
 8. **Important Classes and Interfaces**
-9. **Forge Lifecycle and Event Integration**
+9. **Loader Lifecycle and Event Integration**
 10. **Client, Server, and Shared-Code Boundaries**
 11. **Configuration Architecture**
 12. **Networking Architecture**
@@ -204,7 +204,7 @@ This stage is complete when:
 - Major components and their responsibilities are defined.
 - Package boundaries and dependency directions are clear.
 - Relevant libraries and dependencies have been selected with reasons.
-- Forge lifecycle and integration points are identified.
+- Loader lifecycle and integration points are identified.
 - Client, server, and shared-code boundaries are explicit.
 - Relevant configuration, networking, persistence, and integration approaches are defined.
 - Important runtime flows are understandable.

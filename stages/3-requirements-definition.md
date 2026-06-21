@@ -56,7 +56,7 @@ Establish:
 Do not attempt to define:
 
 - Package or class structure
-- Forge events or APIs
+- Loader events or APIs
 - Libraries or implementation mechanisms
 - Algorithms or internal data structures
 - Architecture or design patterns

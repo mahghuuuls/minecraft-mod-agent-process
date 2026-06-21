@@ -16,7 +16,7 @@ Read:
 setup/template-defaults.properties
 ```
 
-This file defines the default template repository, template ref, final project branch, shared identity, Java syntax setting, and license.
+This file defines shared Minecraft, Java, distribution, branch, syntax, and license preferences. Loader, template, and project identity are project-specific.
 
 ### Project Configuration
 
@@ -26,11 +26,7 @@ Read:
 workspace/project.properties
 ```
 
-This ignored file defines:
-
-- `project_repository_url`
-- `project_directory_name`
-- Optional template or license overrides
+This ignored file defines the approved repository, loader, runtimes, distribution platforms, template, project identity, and any operational overrides.
 
 ### Approved Project Documents
 
@@ -50,6 +46,10 @@ Resolve operational values before cloning anything.
 At minimum, establish:
 
 ```text
+minecraft_version
+mod_loader
+supported_runtimes
+distribution_platforms
 template_repository_url
 template_repository_ref
 project_repository_url
@@ -58,16 +58,13 @@ project_default_branch
 root_package
 mod_authors
 minecraft_username
+preferred_development_java_version
+target_java_version
 use_modern_java_syntax
 license
 ```
 
-Project configuration may override:
-
-- `template_repository_url`
-- `template_repository_ref`
-- `project_default_branch`
-- `license`
+Project configuration supplies project-specific values and may override shared preferences. Every required value must be nonempty and consistent with approved documents before cloning.
 
 Do not permit an operational override to silently contradict approved project documentation.
 
@@ -81,12 +78,12 @@ Confirm that it:
 
 - Is cloneable
 - Has a compatible reuse license
-- Represents a Forge 1.12.2 mod project
+- Represents a Minecraft 1.12.2 project for the approved loader and runtimes
 - Supports the required development and release Java versions
 - Provides a usable build mechanism
 - Contains identifiable source and metadata structures
 
-Do not assume that it uses ForgeDevEnv filenames, properties, packages, starter classes, or placeholders.
+Do not assume loader-specific filenames, properties, packages, starter classes, or placeholders.
 
 When compatibility cannot be established through repository inspection, stop and report the missing evidence.
 
@@ -191,12 +188,12 @@ After copying, verify that the only Git metadata in the final project belongs to
 
 Read values from `setup/template-defaults.properties` instead of hardcoding them.
 
-Map semantic values to the fetched template's actual structure:
+Map applicable shared preferences to the fetched template's actual structure:
 
-- Root package
-- Author metadata
-- Development username
-- Modern Java syntax setting
+- Minecraft version
+- Preferred development Java version when supported
+- Target Java version
+- Modern Java syntax setting when supported
 - Default license
 - Final project branch
 
@@ -206,8 +203,13 @@ Preserve unrelated template settings.
 
 ## Apply Approved Project Values
 
-Read project-specific values from approved documents, including:
+Read project-specific values from `workspace/project.properties` and approved documents, including:
 
+- Selected loader and supported runtimes
+- Approved distribution platforms
+- Root package
+- Author metadata
+- Development username when used
 - Mod display name
 - Mod ID
 - Description
@@ -261,7 +263,7 @@ Inspect:
 - GitHub workflows
 - Gradle publishing configuration
 - Maven publication configuration
-- CurseForge or Modrinth tasks
+- Distribution-platform publishing tasks
 - Scripts triggered by tags or pushes
 - Credential and token references
 
@@ -339,8 +341,8 @@ Verify:
 - Tests pass when present.
 - Processed mod metadata contains the approved values.
 - The main mod class and package compile.
-- The produced artifact is the expected normal reobfuscated mod JAR.
-- The artifact targets Java 8-compatible bytecode.
+- The produced artifact is the expected normal distributable mod artifact for the selected loader.
+- The artifact targets the approved Java runtime version.
 - No development, sources, or Javadoc artifact is mistaken for the release artifact.
 
 Record the command, environment, output result, and produced artifact.

@@ -7,8 +7,8 @@ Use this guide when you prefer to configure the runtime workspace yourself befor
 ## 1. Clone the Process Repository
 
 ```bash
-git clone https://github.com/mahghuuuls/minecraft-mod-agent-process.git
-cd minecraft-mod-agent-process
+git clone https://github.com/mahghuuuls/minecraft-1.12.2-mod-agent-workflow.git
+cd minecraft-1.12.2-mod-agent-workflow
 ```
 
 Do not clone a mod template into the process repository manually.
@@ -48,6 +48,10 @@ Then edit:
 ```properties
 project_repository_url=https://github.com/owner/example-mod.git
 project_directory_name=example-mod
+mod_loader=selected-loader
+distribution_platforms=curseforge
+template_repository_url=https://github.com/owner/selected-template.git
+template_repository_ref=branch-tag-or-commit
 ```
 
 For a new mod, the GitHub repository must be empty before Project Initialization. You may defer creating it while working through Concept, Feasibility, Requirements, and Architecture.
@@ -58,22 +62,17 @@ Do not leave example URLs or invented placeholder values in the real properties 
 
 ## 5. Review Template Defaults
 
-New mods use the template configured in:
+Shared preferences are configured in `setup/template-defaults.properties`, but loader and template selection are project-specific.
 
-```text
-setup/template-defaults.properties
-```
-
-No change is required to accept the default.
-
-To use an approved project-specific candidate, add overrides to `workspace/project.properties`:
+Record the approved loader and template in `workspace/project.properties`:
 
 ```properties
+mod_loader=selected-loader
 template_repository_url=https://github.com/owner/template.git
-template_repository_ref=branch-or-tag
+template_repository_ref=branch-tag-or-commit
 ```
 
-Do not edit shared template defaults for one mod. Feasibility Research must still validate that the selected template fits the project.
+Do not edit shared defaults for one mod. Feasibility Research must validate the selected loader, runtimes, template, Java targets, and distribution constraints.
 
 Existing-project workflows preserve the repository's current build system unless an approved change says otherwise.
 

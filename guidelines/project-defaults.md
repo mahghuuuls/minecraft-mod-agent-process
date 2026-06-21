@@ -2,69 +2,78 @@
 
 These defaults apply to every mod unless an approved project-specific decision overrides them.
 
-`setup/template-defaults.properties` is the authoritative source for machine-readable default values. This document defines their meaning and the policies surrounding them. Do not duplicate literal property values in other reusable instructions.
+`setup/template-defaults.properties` is the authoritative source for machine-readable shared preferences. Project identity, loader, compatible runtimes, distribution targets, and template selection belong in `workspace/project.properties` and approved project documents.
 
-## Platform
+## Fixed Scope
 
-- Target Minecraft Forge 1.12.2.
-- Cleanroom must be supported.
-- Use the template repository and ref identified by `template_repository_url` and `template_repository_ref`.
-- Use the versions of Forge, Gradle, RetroFuturaGradle, and related build tools supplied by the fetched template.
-- Do not upgrade or replace template build components without an approved project-specific reason.
+- Target Minecraft 1.12.2.
+- Use the selected loader and compatible runtimes approved during Project Setup and Feasibility Research.
+- Do not assume Forge, Cleanroom, LiteLoader, or another loader applies until selected.
+- Use loader-specific APIs, metadata, build tooling, and lifecycle rules only when applicable to the selected project.
+- Do not change Minecraft version or loader during implementation without returning to the stages that own those decisions.
+
+## Template and Build Tooling
+
+- Project Setup selects a provisional loader and template; Feasibility Research validates them.
+- Initialization uses the approved template repository and exact ref recorded in project configuration.
+- Use the build tools and wrapper supplied by the approved template or existing project.
+- Do not upgrade or replace build components without an approved project-specific reason.
+- Record the exact fetched template commit during Initialization.
 
 ## Development Environment
 
-- Use Java 25 to run Gradle and the development environment.
+- Treat `preferred_development_java_version` as a preference, not a guarantee that every template supports it.
+- Determine the actual development JDK from the approved loader, template, and build tooling.
 - IntelliJ IDEA is the preferred IDE.
-- Use the Gradle wrapper supplied by the fetched template instead of a separately installed Gradle version.
-- Use the template's build conventions and generated run configurations where applicable.
-- Use `project_default_branch` for the final mod repository branch.
+- Use the project's wrapper instead of a separately installed build-tool version.
+- Use `project_default_branch` for a newly initialized mod repository.
 
-## Java Compatibility
+## Runtime Compatibility
 
-- Release artifacts must remain compatible with Java 8.
-- Read the default modern-syntax setting from `use_modern_java_syntax`.
-- Modern syntax may be enabled only through the mechanism supplied by the configured template.
-- Do not use Java APIs introduced after Java 8 unless an approved compatible dependency provides them at runtime.
-- Building with Java 25 does not permit targeting a newer Java runtime.
+- Treat `target_java_version` as the default release target.
+- Validate the actual Java target against the selected loader, runtimes, dependencies, and template.
+- Do not use runtime APIs newer than the approved target unless an approved compatible dependency supplies them.
+- A newer development JDK does not authorize a newer release target.
+- Record supported runtime environments explicitly rather than inferring them from the loader name.
 
 ## Project Identity
 
-During Initialization, read shared identity values from `setup/template-defaults.properties`:
+Project Setup or approved project documents must establish:
 
-- `mod_authors` defines default author metadata and attribution.
-- `root_package` defines the default root Java package.
-- `minecraft_username` defines the development username.
+- Root Java package
+- Author metadata
+- Development username when the toolchain uses one
+- Mod ID and display name
+- Description and main entry point
 
-Do not hardcode these values in initialization instructions or generated project documents.
-
-The mod ID, display name, final package segment, description, and main class are project-specific decisions and must come from approved project documentation.
+Do not use repository-owner identity as a default for generated mods. Do not leave example values in initialized project files.
 
 ## Licensing and Attribution
 
-- Read the default mod license from `license`.
-- A project may override the license through `workspace/project.properties`.
-- Preserve all license notices and attribution required by the fetched template and any reused code.
-- Retain CleanroomMC attribution when ForgeDevEnv-derived build infrastructure is included.
-- Attribute original mod work using the configured author metadata.
-
-A project-specific license override does not permit removing notices required by upstream licenses.
+- Read the default project license from `license`.
+- A project may override it through `workspace/project.properties`.
+- Preserve notices and attribution required by the selected template, loader, dependencies, and reused code.
+- Attribute original mod work using approved project author metadata.
+- A project license override does not permit removing upstream obligations.
 
 ## Distribution
 
-- CurseForge is the only intended mod distribution platform.
-- Do not prepare Modrinth or other platform-specific publication unless explicitly requested.
-- Agents may prepare release artifacts, documentation, metadata, and visual assets.
+- Treat `preferred_distribution_platform` as the suggested primary destination.
+- Project Setup asks the owner to approve one or more distribution platforms.
+- CurseForge should be offered as the default recommendation, but it is not mandatory or exclusive.
+- Research and follow the current requirements of every selected platform.
+- Agents may prepare artifacts, documentation, metadata, and visual assets for approved platforms.
 - The project owner performs every upload and publication action.
 
 ## Versioning
 
-- Use semantic versioning for mod releases unless an approved project decision requires another scheme.
-- Version changes belong to release preparation and must not occur incidentally during feature work.
+- Use semantic versioning unless an approved decision requires another scheme.
+- Version changes belong to release work and must not occur incidentally during feature implementation.
 
 ## Overrides
 
-- Project-specific overrides belong in the ignored `workspace/project.properties` or approved project documentation, depending on whether they are operational or behavioral.
-- Explicit project decisions take precedence over shared defaults.
+- Operational overrides belong in the ignored `workspace/project.properties`.
+- Behavioral and architectural decisions belong in approved project documents.
+- Explicit project decisions take precedence over shared preferences.
 - Never infer or apply an override silently.
-- When an override affects compatibility, architecture, licensing, or distribution, record its consequences in the relevant project document.
+- Record consequences when an override affects compatibility, architecture, licensing, or distribution.

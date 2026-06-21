@@ -55,7 +55,7 @@ Explicit authorization is required for each of these actions:
 
 Authorization for one action does not authorize another. Do not use destructive Git operations without explicit permission. Preserve unrelated changes and report which repository was inspected or changed.
 
-CurseForge publication is always performed manually by the project owner. Agents may prepare the handoff but may not upload or publish the mod.
+Publication to every approved distribution platform is performed manually by the project owner. Agents may prepare handoffs but may not upload or publish the mod.
 
 ## Completion Reporting
 

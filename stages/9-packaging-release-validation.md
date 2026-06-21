@@ -2,7 +2,7 @@
 
 ## Purpose
 
-Apply the approved release presentation, build and validate the exact distributable artifact, and prepare the handoff for manual CurseForge publication.
+Apply the approved release presentation, build and validate the exact distributable artifact, and prepare the handoff for manual publication to the approved distribution platforms.
 
 ## Main Question
 
@@ -52,7 +52,7 @@ Do not:
 - Redesign branding or rewrite release messaging without returning to Release Presentation
 - Claim unverified compatibility
 - Upload a file or asset
-- Create or edit the live CurseForge project
+- Create or edit a live distribution-platform project
 - Publish a release
 - Commit, tag, or push unless separately authorized
 - Begin post-release maintenance
@@ -87,7 +87,7 @@ Confirm consistency across:
 - Required and optional dependencies
 - Accepted dependency versions
 - JAR filename
-- Approved CurseForge presentation
+- Approved distribution-platform presentation
 
 Do not expand compatibility claims beyond approved evidence.
 
@@ -195,7 +195,7 @@ Do not record a publication result because publication occurs after this stage.
 
 ## Manual Publication Boundary
 
-The project owner is responsible for signing into CurseForge, creating or editing the live project, uploading the JAR and assets, selecting live relationships, publishing the file, and verifying the published page.
+The project owner is responsible for signing into each approved distribution platform, creating or editing live projects, uploading artifacts and assets, selecting live relationships, publishing files, and verifying published pages.
 
 The agent may prepare text or troubleshoot when explicitly requested but must not perform those actions.
 

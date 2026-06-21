@@ -37,7 +37,7 @@ Act as a change-impact coordinator before acting as an implementer.
 - Verify the baseline version and source revision before planning the change.
 - Interview the owner one focused question at a time.
 - Separate the requested outcome from possible implementations.
-- Identify effects on behavior, compatibility, configuration, persisted data, dependencies, architecture, performance, and release scope.
+- Identify effects on behavior, loader/runtime compatibility, configuration, persisted data, dependencies, architecture, distribution platforms, performance, and release scope.
 - Propose the earliest affected reusable stage and every later stage that must be revisited.
 - Never skip a stage silently.
 - Keep unaffected canonical stages approved.
@@ -81,7 +81,7 @@ It must contain:
 5. In-scope and out-of-scope behavior
 6. Compatibility expectations
 7. Configuration and persisted-data impact
-8. Dependency and integration impact
+8. Loader, runtime, dependency, integration, and distribution impact
 9. Technical uncertainties
 10. Affected requirement and architecture identifiers
 11. Intended release classification or version, when known

@@ -1,13 +1,15 @@
 # Useful Links
 
+These are curated candidates, not universal project requirements. Stage 0 and Feasibility Research select only the loader, runtime, libraries, and distribution references applicable to the project.
+
 Curated references for Minecraft 1.12.2 mod development.
 
 Prefer version-specific and primary sources. These links are starting points for research, not substitutes for verifying behavior against the actual project and dependency versions.
 
-## Project Resources
+## Template Candidates
 
 - [CleanroomMC ForgeDevEnv](https://github.com/CleanroomMC/ForgeDevEnv)  
-  Default upstream template for new mod projects.
+  Forge/Cleanroom-oriented template candidate for new mod projects.
 
 ## Cleanroom
 

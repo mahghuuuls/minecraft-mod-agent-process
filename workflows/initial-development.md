@@ -70,7 +70,7 @@ After publication is confirmed, it records:
 - Published version
 - Source revision
 - Publication date reported by the owner
-- Supported Minecraft, loader, Cleanroom, and Java environment
+- Supported Minecraft, loader, runtimes, Java environment, and distribution platforms
 - Canonical approved project documents
 - Known limitations
 - Release artifact identity and checksum

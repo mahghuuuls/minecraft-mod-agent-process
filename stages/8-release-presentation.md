@@ -2,7 +2,7 @@
 
 ## Purpose
 
-Prepare and approve the release's user-facing identity, documentation, visual assets, and CurseForge presentation before technical packaging begins.
+Prepare and approve the release's user-facing identity, documentation, visual assets, and distribution-platform presentation before technical packaging begins.
 
 This stage describes only behavior that has been implemented and verified. It does not build or validate the release JAR.
 
@@ -31,7 +31,7 @@ Establish:
 - An accurate changelog
 - An approved decision to carry forward, revise, or create the mod icon
 - Approved visual assets and screenshots when applicable
-- Accurate CurseForge project and file text
+- Accurate project and file text for the approved distribution platforms
 - User-facing compatibility, dependency, and limitation statements
 - An approved presentation record for technical release validation
 
@@ -43,7 +43,7 @@ Establish:
 - Decide whether existing branding remains appropriate
 - Create or revise the mod icon when required
 - Prepare approved screenshots or description images
-- Prepare CurseForge summary, description, categories, dependency information, and file changelog
+- Prepare summary, description, categories, dependency information, and file changelog for each approved platform
 - Confirm that every user-facing claim is supported by implementation evidence
 - Produce `<artifact-root>/release-presentation.md`
 
@@ -56,7 +56,7 @@ Do not:
 - Apply unapproved version or metadata changes
 - Build the final release JAR
 - Inspect or test the final release JAR
-- Upload assets or files to CurseForge
+- Upload assets or files to a distribution platform
 - Publish a release
 - Claim compatibility that was not verified
 
@@ -121,13 +121,13 @@ Approved assets must:
 - Represent the mod accurately
 - Remain recognizable at their displayed sizes
 - Use original or properly licensed material
-- Avoid Minecraft, CurseForge, another project, or another creator's branding as the primary artwork
+- Avoid Minecraft, a distribution platform, another project, or another creator's branding as the primary artwork
 - Meet current destination requirements
 - Be approved by the project owner
 
 Screenshots should show actual implemented behavior. Do not substitute generated imagery for evidence of gameplay or UI behavior.
 
-## CurseForge Presentation
+## Distribution-Platform Presentation
 
 Prepare, but do not publish:
 
@@ -143,7 +143,7 @@ Prepare, but do not publish:
 - File changelog
 - Known limitations
 
-Verify current CurseForge presentation and asset requirements during this stage.
+Verify current distribution-platform presentation and asset requirements during this stage.
 
 ## Process
 
@@ -154,7 +154,7 @@ Verify current CurseForge presentation and asset requirements during this stage.
 5. Decide whether branding is carried forward, revised, or created.
 6. Run the icon guide only when revision or creation is approved.
 7. Prepare screenshots and additional images when applicable.
-8. Prepare CurseForge project and file text.
+8. Prepare project and file text for the approved distribution platforms.
 9. Cross-check every claim against requirements and implementation evidence.
 10. Produce the presentation record.
 11. Present the complete documentation, assets, and listing material for approval.
@@ -186,7 +186,7 @@ It should contain:
 3. Branding decision
 4. Approved icon and asset paths
 5. Reference-source record when artwork was created or revised
-6. Prepared CurseForge presentation
+6. Prepared distribution-platform presentation
 7. User-facing compatibility and dependency claims
 8. Known limitations
 9. Owner approvals
@@ -199,7 +199,7 @@ This stage is complete when:
 - README and changelog accurately describe the implemented mod.
 - The branding decision is recorded.
 - Required visual assets are approved and technically suitable.
-- CurseForge presentation material is complete.
+- distribution-platform presentation material is complete.
 - Every user-facing claim is supported by evidence.
 - No unresolved presentation defect remains.
 - `<artifact-root>/release-presentation.md` is generated and approved.

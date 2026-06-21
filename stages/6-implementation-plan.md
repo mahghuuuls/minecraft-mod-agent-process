@@ -97,7 +97,7 @@ For example, a slice might include:
 
 - Relevant configuration
 - Core behavior
-- Forge integration
+- Loader integration
 - Client/server handling
 - Persistence or networking
 - Verification
@@ -107,7 +107,7 @@ A vertical slice should produce something observable and verifiable, even if the
 Do not split work entirely into layers such as:
 
 1. Create every data class.
-2. Create every Forge event handler.
+2. Create every loader event handler.
 3. Create every network message.
 4. Connect everything at the end.
 

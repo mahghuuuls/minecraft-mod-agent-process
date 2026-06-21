@@ -1,16 +1,16 @@
-# Minecraft Mod Agent Process
+# Minecraft 1.12.2 Mod Agent Workflow
 
 A guided workspace for developing Minecraft 1.12.2 mods with a coding agent such as Codex, Claude Code, Antigravity, or another agent that can inspect files and run development commands.
 
-This is not designed for one-prompt, unattended vibe coding. The agent interviews you, researches constraints, produces reviewable documents, plans the work, implements approved issues, and verifies the result. You remain responsible for product direction, important technical decisions, approval checkpoints, gameplay judgment, and manual CurseForge publication.
+This is not designed for one-prompt, unattended vibe coding. The agent interviews you, researches constraints, produces reviewable documents, plans the work, implements approved issues, and verifies the result. You remain responsible for product direction, important technical decisions, approval checkpoints, gameplay judgment, and manual publication to the approved distribution platforms.
 
 ## Quick Start
 
 Clone the repository:
 
 ```bash
-git clone https://github.com/mahghuuuls/minecraft-mod-agent-process.git
-cd minecraft-mod-agent-process
+git clone https://github.com/mahghuuuls/minecraft-1.12.2-mod-agent-workflow.git
+cd minecraft-1.12.2-mod-agent-workflow
 ```
 
 Open the cloned directory with your coding agent and send:
@@ -57,7 +57,7 @@ Expect to participate in:
 - Artistic direction and icon selection
 - In-game and multiplayer judgment
 - Review of implementation results
-- Manual creation or management of GitHub and CurseForge resources
+- Manual creation or management of GitHub and distribution-platform resources
 - Final publication
 
 The process is intended to make agent-assisted development controlled and understandable, not autonomous at any cost.
@@ -77,7 +77,7 @@ For manual instructions, see [Manual Workspace Setup](setup/manual-workspace-set
 ## Repository Structure
 
 ```text
-minecraft-mod-agent-process/
+minecraft-1.12.2-mod-agent-workflow/
 ├── AGENTS.md
 ├── guidelines/
 ├── workflows/

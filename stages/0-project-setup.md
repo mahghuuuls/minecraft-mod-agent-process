@@ -27,8 +27,8 @@ Establish:
 - The proposed workflow
 - The current tool and workspace state
 - The project repository state or the stage by which it must exist
-- A provisional template choice for Initial Development
-- Known operational overrides
+- A provisional loader, compatible-runtime, and template choice for Initial Development
+- Approved distribution platforms and known operational overrides
 - Deferred prerequisites and their deadlines
 - A clear starting point requiring no README knowledge
 
@@ -40,9 +40,9 @@ Establish:
 - Record IntelliJ IDEA availability or installation as a pending prerequisite
 - Create required ignored runtime directories
 - Create or update `workspace/project.properties` when enough real values are known
-- Explain the configured default template
-- Research template alternatives when requested
-- Record a provisional template candidate or defer final validation to Feasibility Research
+- Explain the shared platform preferences and available loader/template choices
+- Research loader and template candidates when requested or unresolved
+- Record provisional loader, runtime, and template candidates or defer final validation to Feasibility Research
 - Explain repository requirements for the selected scenario
 - Propose the applicable workflow
 - Produce `workspace/documentation/project-setup.md`
@@ -129,17 +129,18 @@ Do not install software without explicit authorization.
 
 For Initial Development:
 
-1. Read the configured default template repository and ref.
-2. Explain briefly why it is the default.
-3. Ask whether to accept it provisionally or investigate alternatives.
-4. If alternatives are requested, research current candidates using authoritative, version-specific evidence.
-5. Compare Minecraft 1.12.2 support, Cleanroom compatibility, Java development and runtime targets, build tooling, license, reuse conditions, and maintenance state.
-6. Recommend a provisional candidate with trade-offs.
-7. Store approved project-specific overrides in `workspace/project.properties`.
+1. Read the shared Minecraft, Java, license, branch, and distribution preferences.
+2. Ask whether the owner already requires a particular loader or compatible runtime.
+3. When unresolved, explain relevant Minecraft 1.12.2 loader options and research current candidates using authoritative, version-specific evidence.
+4. Ask whether CurseForge should be the primary destination and whether other platforms must also be supported.
+5. Research templates compatible with the provisional loader and runtime choices.
+6. Compare Minecraft 1.12.2 support, loader/runtime compatibility, development and target Java versions, build tooling, license, reuse conditions, maintenance state, and selected distribution requirements.
+7. Recommend provisional loader, runtime, template, and distribution choices with trade-offs.
+8. Store approved project-specific values in `workspace/project.properties`.
 
-Template choice during setup is provisional. Feasibility Research validates that it fits the approved concept and technical constraints. Do not clone or prototype templates during this stage.
+These choices remain provisional until Feasibility Research validates them against the approved concept and technical constraints. Do not clone or prototype templates during this stage.
 
-Existing Project Adoption and Change Cycle use the existing repository's build system unless later approved work changes it.
+Existing Project Adoption and Change Cycle begin from the existing loader and build system, but Stage 0 must still record supported runtimes and intended distribution platforms.
 
 ## Project Configuration
 
@@ -155,9 +156,18 @@ Relevant values may include:
 
 - `project_repository_url`
 - `project_directory_name`
+- `mod_loader`
+- `supported_runtimes`
+- `distribution_platforms`
 - `template_repository_url`
 - `template_repository_ref`
+- `root_package`
+- `mod_authors`
+- `minecraft_username`
+- `preferred_development_java_version`
+- `target_java_version`
 - `project_default_branch`
+- `use_modern_java_syntax`
 - `license`
 
 Shared defaults remain in `setup/template-defaults.properties`. Do not edit shared defaults during mod development.
@@ -171,7 +181,7 @@ If a new mod's repository or directory name is deferred, do not create an invali
 3. Identify the scenario.
 4. Inspect available environment tools and repositories.
 5. Resolve known repository configuration.
-6. For a new mod, resolve or provisionally defer template selection.
+6. Resolve or provisionally defer loader, runtime, template, and distribution selections.
 7. Write only approved known operational values.
 8. Record deferred prerequisites and the stage by which each is required.
 9. Propose the applicable workflow.
@@ -194,7 +204,7 @@ It should contain:
 4. Environment inspection
 5. Repository state
 6. Configuration written
-7. Provisional template decision and evidence
+7. Provisional loader, runtime, template, and distribution decisions with evidence
 8. Deferred prerequisites and deadlines
 9. Blocking problems
 10. Owner approvals
@@ -209,7 +219,7 @@ This stage is complete when:
 - The proposed workflow is explicit.
 - Required-now operational values are configured.
 - Future prerequisites have explicit deadlines.
-- The template decision is recorded or legitimately not applicable.
+- The loader, runtime, template, and distribution decisions are recorded or legitimately deferred/not applicable.
 - No unresolved blocker prevents the selected workflow's first stage.
 - `project-setup.md` is approved.
 - The project owner separately approves the proposed workflow.
