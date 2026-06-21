@@ -12,19 +12,11 @@ The agent prepares and validates the release package. The project owner performs
 
 ## Required Input
 
-- `guidelines/project-defaults.md`
-- `guidelines/collaboration-guidelines.md`
-- `guidelines/coding-standards.md`
-- `workspace/documentation/concept-and-scope.md`
 - `workspace/documentation/requirements.md`
-- `workspace/documentation/architecture.md`
-- `workspace/documentation/project-initialization.md`
 - `workspace/documentation/implementation-plan.md`
-- Completed implementation issues under `workspace/documentation/issues/`
+- Completed issues under `workspace/documentation/issues/`
 - The completed project under `workspace/project/<project_directory_name>/`
 - Implementation verification evidence
-
-All earlier stages must be approved before release preparation begins.
 
 ## Objectives
 
@@ -316,14 +308,6 @@ The project owner is responsible for:
 - Verifying the published page
 
 The agent may assist with text or troubleshooting when explicitly requested, but must not perform these actions.
-
-## Stage Approval
-
-- Treat this stage and its artifacts as **In Progress** while work is being developed.
-- When the output is ready for review, update `workspace/documentation/project-status.md` to **Awaiting Approval** and present the complete result.
-- Only the project owner may mark the stage **Approved**.
-- Do not publish or begin maintenance automatically.
-- If a release-blocking implementation defect is found, stop, mark the affected stages **Needs Revision**, and return to Implementation.
 
 ## Completion Criteria
 

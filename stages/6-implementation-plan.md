@@ -10,17 +10,10 @@ Convert the approved requirements and architecture into small, ordered, and veri
 
 ## Required Input
 
-- `guidelines/project-defaults.md`
-- `guidelines/collaboration-guidelines.md`
-- `guidelines/coding-standards.md`
-- `workspace/documentation/concept-and-scope.md`
-- `workspace/documentation/feasibility-research.md`
 - `workspace/documentation/requirements.md`
 - `workspace/documentation/architecture.md`
 - `workspace/documentation/project-initialization.md`
 - The initialized project under `workspace/project/<project_directory_name>/`
-
-Read and follow all input documents before beginning this stage.
 
 ## Objectives
 
@@ -93,7 +86,7 @@ Act as an implementation planner.
 - Ask the project owner one focused question at a time when prioritization or scope decisions are required.
 - Do not ask questions already answered by approved documents.
 - Identify contradictions or missing information rather than guessing.
-- Present the complete plan for approval before generating the final artifacts.
+- Generate complete draft artifacts, present them for approval, and revise them as required.
 
 ## Vertical Slices
 
@@ -306,14 +299,6 @@ issues/
 ```
 
 The implementation plan should reference these files instead of duplicating their full contents.
-
-## Stage Approval
-
-- Treat this stage and its artifacts as **In Progress** while work is being developed.
-- When the output is ready for review, update `workspace/documentation/project-status.md` to **Awaiting Approval** and present the complete result.
-- Only the project owner may mark the stage **Approved**.
-- Do not begin the next stage automatically.
-- If new evidence invalidates an earlier approved stage, stop, mark the affected stages **Needs Revision**, identify the conflict, and resume only after the earlier stage is corrected and approved again.
 
 ## Completion Criteria
 

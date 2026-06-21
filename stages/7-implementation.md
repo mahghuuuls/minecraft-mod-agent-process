@@ -12,19 +12,11 @@ Implementation includes coding, testing, in-game verification, defect correction
 
 ## Required Input
 
-- `guidelines/project-defaults.md`
-- `guidelines/collaboration-guidelines.md`
-- `guidelines/coding-standards.md`
-- `workspace/documentation/concept-and-scope.md`
-- `workspace/documentation/feasibility-research.md`
-- `workspace/documentation/requirements.md`
-- `workspace/documentation/architecture.md`
-- `workspace/documentation/project-initialization.md`
+- `workspace/documentation/project-status.md`
 - `workspace/documentation/implementation-plan.md`
-- The relevant issue file under `issues/`
+- The selected issue under `workspace/documentation/issues/`
+- The requirements and architecture references named by that issue
 - The initialized project under `workspace/project/<project_directory_name>/`
-
-Read and follow all relevant input documents before beginning an issue.
 
 ## Objectives
 
@@ -303,14 +295,6 @@ An issue is complete when:
 - Legitimate review findings are resolved.
 - Any remaining limitations are explicit and approved.
 - The issue status is **Done**.
-
-## Stage Approval
-
-- Treat this stage and its artifacts as **In Progress** while work is being developed.
-- When the output is ready for review, update `workspace/documentation/project-status.md` to **Awaiting Approval** and present the complete result.
-- Only the project owner may mark the stage **Approved**.
-- Do not begin the next stage automatically.
-- If new evidence invalidates an earlier approved stage, stop, mark the affected stages **Needs Revision**, identify the conflict, and resume only after the earlier stage is corrected and approved again.
 
 ## Stage Completion Criteria
 

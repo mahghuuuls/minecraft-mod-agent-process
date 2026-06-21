@@ -11,11 +11,7 @@ Establish a shared understanding of what the mod should accomplish and where its
 ## Required Input
 
 - The initial mod idea or problem statement
-- `guidelines/project-defaults.md`
-- `guidelines/collaboration-guidelines.md`
 - Any examples or references supplied by the project owner
-
-Read and follow `guidelines/project-defaults.md` before beginning this stage.
 
 ## Objectives
 
@@ -113,14 +109,6 @@ Produce a Markdown document named `workspace/documentation/concept-and-scope.md`
 14. **Definition of Success**
 
 Omit sections without relevant content instead of inventing information.
-
-## Stage Approval
-
-- Treat this stage and its artifacts as **In Progress** while work is being developed.
-- When the output is ready for review, update `workspace/documentation/project-status.md` to **Awaiting Approval** and present the complete result.
-- Only the project owner may mark the stage **Approved**.
-- Do not begin the next stage automatically.
-- If new evidence invalidates an earlier approved stage, stop, mark the affected stages **Needs Revision**, identify the conflict, and resume only after the earlier stage is corrected and approved again.
 
 ## Completion Criteria
 

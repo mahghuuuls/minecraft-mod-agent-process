@@ -12,12 +12,8 @@ This stage performs research. It does not write or test implementation code.
 
 ## Required Input
 
-- `guidelines/project-defaults.md`
-- `guidelines/collaboration-guidelines.md`
 - `workspace/documentation/concept-and-scope.md`
-- Any source code, mod files, documentation, or references relevant to the concept
-
-Read and follow the input documents before beginning this stage.
+- Any supplied source code, mod files, documentation, or references
 
 ## Objectives
 
@@ -152,14 +148,6 @@ Produce `workspace/documentation/feasibility-research.md` containing:
 13. **Required Scope Reconsiderations**
 14. **Constraints for Requirements and Architecture**
 15. **Evidence and References**
-
-## Stage Approval
-
-- Treat this stage and its artifacts as **In Progress** while work is being developed.
-- When the output is ready for review, update `workspace/documentation/project-status.md` to **Awaiting Approval** and present the complete result.
-- Only the project owner may mark the stage **Approved**.
-- Do not begin the next stage automatically.
-- If new evidence invalidates an earlier approved stage, stop, mark the affected stages **Needs Revision**, identify the conflict, and resume only after the earlier stage is corrected and approved again.
 
 ## Completion Criteria
 

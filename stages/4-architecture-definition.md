@@ -12,14 +12,9 @@ The architecture should provide a clear map of where responsibilities belong and
 
 ## Required Input
 
-- `guidelines/project-defaults.md`
-- `guidelines/collaboration-guidelines.md`
-- `guidelines/coding-standards.md`
-- `workspace/documentation/concept-and-scope.md`
 - `workspace/documentation/feasibility-research.md`
 - `workspace/documentation/requirements.md`
-
-Read and follow all input documents before beginning this stage.
+- The active mod repository, when architecture must account for existing code
 
 ## Objectives
 
@@ -96,7 +91,6 @@ Act as a software architect collaborating with the project owner.
 - Trace architectural decisions back to requirements or established constraints.
 - Identify decisions that remain uncertain and require validation during Implementation.
 - Flag conflicts with requirements or feasibility findings.
-- Return to an earlier stage when resolving a conflict requires changing an approved decision.
 - Periodically summarize the proposed architecture and request corrections.
 - Produce the final architecture only after explicit approval.
 
@@ -202,14 +196,6 @@ Produce a Markdown document named `workspace/documentation/architecture.md` cont
 Omit sections that do not apply rather than inventing architectural concerns.
 
 Use compact Mermaid diagrams when they make component relationships or runtime flows easier to understand. Diagrams must supplement the written responsibilities and dependency rules, not replace them.
-
-## Stage Approval
-
-- Treat this stage and its artifacts as **In Progress** while work is being developed.
-- When the output is ready for review, update `workspace/documentation/project-status.md` to **Awaiting Approval** and present the complete result.
-- Only the project owner may mark the stage **Approved**.
-- Do not begin the next stage automatically.
-- If new evidence invalidates an earlier approved stage, stop, mark the affected stages **Needs Revision**, identify the conflict, and resume only after the earlier stage is corrected and approved again.
 
 ## Completion Criteria
 

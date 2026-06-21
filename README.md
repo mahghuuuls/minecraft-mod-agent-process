@@ -2,29 +2,13 @@
 
 A reusable workspace for developing one Minecraft 1.12.2 mod at a time with AI agents through an approved, stage-based process.
 
-The repository separates reusable process instructions from project-specific documentation, temporary template files, and the final mod repository.
-
-## Development Process
-
-Projects pass through these stages:
-
-1. Concept and Scope
-2. Feasibility Research
-3. Requirements Definition
-4. Architecture Definition
-5. Project Initialization
-6. Implementation Plan
-7. Implementation
-8. Packaging and Release Preparation
-
-Each stage must be approved before the next stage begins. The project owner performs the final CurseForge publication manually.
+The repository separates reusable instructions from ignored project documentation, temporary template files, and the independent final mod repository.
 
 ## Repository Structure
 
 ```text
 minecraft-mod-agent-process/
 ├── AGENTS.md
-├── README.md
 ├── guidelines/
 ├── references/
 ├── setup/
@@ -36,118 +20,73 @@ minecraft-mod-agent-process/
     └── template/
 ```
 
-### Versioned Content
+- `AGENTS.md` is the agent entry point.
+- `guidelines/` contains shared rules, including the authoritative process definition.
+- `stages/` contains stage-specific instructions.
+- `setup/` contains configuration examples and the initialization procedure.
+- `references/` contains curated technical links.
+- `workspace/` contains ignored, project-specific runtime data.
 
-- `AGENTS.md`: operating rules and entry point for agents
-- `guidelines/`: shared project, collaboration, and coding rules
-- `references/`: curated technical references
-- `setup/`: reusable defaults, examples, and initialization instructions
-- `stages/`: responsibilities, outputs, and completion criteria for every stage
+See `guidelines/process-control.md` for the stage sequence, statuses, approval flow, and expected outputs.
 
-### Runtime Content
+## Prerequisites
 
-- `workspace/documentation/`: generated project-specific documents
-- `workspace/project.properties`: ignored configuration identifying the empty final repository
-- `workspace/template/`: ignored temporary clone of the configured template repository
-- `workspace/project/<mod-name>/`: independently cloned final mod repository
+Install Git, Java 25, and IntelliJ IDEA. Create an empty GitHub repository for the final mod without a README, license, `.gitignore`, or initial commit.
 
-The runtime template and final project have separate Git histories. Template history must never be copied into the final mod repository.
+The exact platform, compatibility, tooling, distribution, and license defaults are defined in `guidelines/project-defaults.md` and `setup/template-defaults.properties`.
 
-## Requirements
-
-- Git
-- Java 25 for the Gradle development environment
-- IntelliJ IDEA as the preferred IDE
-- An empty GitHub repository for the final mod
-
-Released mod artifacts remain compatible with Java 8 according to the configured ForgeDevEnv build.
-
-## Clone the Process Repository
+## Clone
 
 ```bash
 git clone https://github.com/mahghuuuls/minecraft-mod-agent-process.git
 cd minecraft-mod-agent-process
 ```
 
-No submodules are required.
+No submodules are required. Use a separate clone of this process repository for each mod project.
 
 ## Configure a Project
 
-Create an empty GitHub repository without a README, license, `.gitignore`, or initial commit.
-
-Copy the example configuration:
+Create the ignored project configuration:
 
 ```bash
 cp setup/project.properties.example workspace/project.properties
 ```
 
-Edit the ignored file:
+Set the empty final repository and its local directory name:
 
 ```properties
 project_repository_url=https://github.com/mahghuuuls/example-mod.git
 project_directory_name=example-mod
 ```
 
-Shared template defaults are stored in:
+Shared template and identity defaults remain in `setup/template-defaults.properties`. Project-specific overrides belong in `workspace/project.properties`.
 
-```text
-setup/template-defaults.properties
-```
-
-By default, Initialization obtains ForgeDevEnv from its `master` branch. The final mod repository is initialized on `main`.
-
-## Use the Workspace
+## Run the Process
 
 1. Start the agent from the process repository root.
-2. Tell the agent which stage to begin.
-3. Review and approve each stage output.
-4. Keep generated planning documents under `workspace/documentation/`.
-5. During Project Initialization, the agent clones the configured template and empty final repository.
-6. During Implementation, the agent modifies only the final mod repository.
-7. During Packaging and Release Preparation, the agent prepares the release for manual CurseForge publication.
+2. Tell it which stage to begin.
+3. Review and explicitly approve each stage output.
+4. During Initialization, allow it to prepare the independent final repository.
+5. During Implementation, open and edit only the repository under `workspace/project/`.
+6. During release preparation, review the handoff and publish to CurseForge manually.
 
-Use a separate clone of this process repository for each mod project.
-
-When coding directly in IntelliJ IDEA, open the final repository under `workspace/project/`, not the outer process repository.
-
-## Project Documentation
-
-Typical generated files include:
-
-```text
-workspace/documentation/
-├── project-status.md
-├── concept-and-scope.md
-├── feasibility-research.md
-├── requirements.md
-├── architecture.md
-├── implementation-plan.md
-└── issues/
-```
-
-These files are ignored by the process repository. Back them up separately when their history or long-term preservation matters.
+Generated process artifacts are stored under `workspace/documentation/` and ignored by this repository. Preserve them separately when long-term history matters.
 
 ## Git Boundaries
 
-The process repository stores reusable workflow material. The final mod repository stores mod source code and release history.
-
-Before running Git commands, verify which repository they will affect:
+The outer process repository, temporary template clone, and final mod repository have separate purposes and histories. Before running Git commands, confirm the target:
 
 ```bash
 git status
 git -C workspace/project/<mod-name> status
 ```
 
-Agents must not commit, push, open pull requests, upload files, or publish releases unless explicitly authorized.
+Agents follow the authorization rules in `guidelines/collaboration-guidelines.md`.
 
-## Updating the Process
+## Update the Process
 
 ```bash
 git pull --ff-only
 ```
 
-The template source and default branch are configured in `setup/template-defaults.properties`. Initialization records the exact template commit obtained for each project.
-
-## Distribution
-
-Mods are prepared for CurseForge distribution only. Agents may prepare artifacts, documentation, metadata, and visual assets, but the project owner performs publication.
+Initialization records the exact template revision used, so updating this process repository does not alter an already initialized mod automatically.

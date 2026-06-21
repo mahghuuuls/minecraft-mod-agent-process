@@ -10,13 +10,9 @@ Convert the approved concept into precise, observable, and testable behavior wit
 
 ## Required Input
 
-- `guidelines/project-defaults.md`
-- `guidelines/collaboration-guidelines.md`
 - `workspace/documentation/concept-and-scope.md`
 - `workspace/documentation/feasibility-research.md`
 - Any approved decisions produced from feasibility findings
-
-Read and follow all input documents before beginning this stage.
 
 ## Objectives
 
@@ -92,7 +88,6 @@ Act as a requirements analyst.
 - Write requirements so their satisfaction can be objectively evaluated.
 - Identify contradictions between requirements.
 - Identify conflicts with project defaults or feasibility findings.
-- Return to an earlier stage when resolving a conflict requires changing an approved decision.
 - Periodically summarize the current requirements and request corrections.
 - Produce the final document only after explicit approval.
 
@@ -183,14 +178,6 @@ Produce a Markdown document named `workspace/documentation/requirements.md` cont
 16. **Unresolved Non-Blocking Questions**
 
 Omit categories that do not apply rather than inventing requirements.
-
-## Stage Approval
-
-- Treat this stage and its artifacts as **In Progress** while work is being developed.
-- When the output is ready for review, update `workspace/documentation/project-status.md` to **Awaiting Approval** and present the complete result.
-- Only the project owner may mark the stage **Approved**.
-- Do not begin the next stage automatically.
-- If new evidence invalidates an earlier approved stage, stop, mark the affected stages **Needs Revision**, identify the conflict, and resume only after the earlier stage is corrected and approved again.
 
 ## Completion Criteria
 
