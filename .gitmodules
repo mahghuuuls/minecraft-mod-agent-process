@@ -1,3 +1,4 @@
-[submodule "template/mah-mod-template"]
-	path = template/mah-mod-template
-	url = https://github.com/mahghuuuls/mah-mod-template.git
+[submodule "template/ForgeDevEnv"]
+	path = template/ForgeDevEnv
+	url = https://github.com/CleanroomMC/ForgeDevEnv.git
+	branch = master
