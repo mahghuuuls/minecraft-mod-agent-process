@@ -1,0 +1,3 @@
+[submodule "template/mah-mod-template"]
+	path = template/mah-mod-template
+	url = https://github.com/mahghuuuls/mah-mod-template.git
