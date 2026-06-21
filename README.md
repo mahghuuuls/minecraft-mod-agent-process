@@ -1,6 +1,6 @@
 # Minecraft Mod Agent Process
 
-A reusable workspace for developing one Minecraft 1.12.2 mod at a time with AI agents through an approved, stage-based process.
+A reusable workspace for developing, adopting, and iteratively updating one Minecraft 1.12.2 mod at a time with AI agents.
 
 The repository separates reusable instructions from ignored project documentation, temporary template files, and the independent final mod repository.
 
@@ -10,9 +10,10 @@ The repository separates reusable instructions from ignored project documentatio
 minecraft-mod-agent-process/
 ├── AGENTS.md
 ├── guidelines/
+├── workflows/
+├── stages/
 ├── references/
 ├── setup/
-├── stages/
 └── workspace/
     ├── documentation/
     ├── project/
@@ -20,20 +21,27 @@ minecraft-mod-agent-process/
     └── template/
 ```
 
-- `AGENTS.md` is the agent entry point.
-- `guidelines/` contains shared rules, including the authoritative process definition.
-- `stages/` contains stage-specific instructions.
-- `setup/` contains configuration examples and the initialization procedure.
+- `AGENTS.md` is the agent entry point and workflow router.
+- `guidelines/` contains shared rules and process control.
+- `workflows/` defines scenario-specific agent behavior and stage routing.
+- `stages/` contains reusable stage instructions.
+- `setup/` contains configuration examples and new-project initialization.
 - `references/` contains curated technical links.
 - `workspace/` contains ignored, project-specific runtime data.
 
-See `guidelines/process-control.md` for the stage sequence, statuses, approval flow, and expected outputs.
+## Supported Workflows
+
+- **Initial Development:** create and prepare the first release of a new mod.
+- **Existing Project Adoption:** document and approve the baseline of an existing mod without changing it.
+- **Change Cycle:** deliver an iterative feature, fix, compatibility update, or refactor against an approved baseline.
+
+The agent selects a workflow from repository state and asks for approval before beginning it. See `guidelines/process-control.md` for status, approval, and artifact rules.
 
 ## Prerequisites
 
-Install Git, Java 25, and IntelliJ IDEA. Create an empty GitHub repository for the final mod without a README, license, `.gitignore`, or initial commit.
+Install Git and the development environment specified by `guidelines/project-defaults.md`.
 
-The exact platform, compatibility, tooling, distribution, and license defaults are defined in `guidelines/project-defaults.md` and `setup/template-defaults.properties`.
+For Initial Development, create an empty GitHub repository without a README, license, `.gitignore`, or initial commit. Existing Project Adoption and Change Cycle use the existing repository with its history intact.
 
 ## Clone
 
@@ -52,25 +60,27 @@ Create the ignored project configuration:
 cp setup/project.properties.example workspace/project.properties
 ```
 
-Set the empty final repository and its local directory name:
+Set the GitHub repository and its local directory name:
 
 ```properties
 project_repository_url=https://github.com/mahghuuuls/example-mod.git
 project_directory_name=example-mod
 ```
 
+For Initial Development, the repository must be empty before Initialization. For adoption or a change cycle, it is the existing mod repository.
+
 Shared template and identity defaults remain in `setup/template-defaults.properties`. Project-specific overrides belong in `workspace/project.properties`.
 
 ## Run the Process
 
 1. Start the agent from the process repository root.
-2. Tell it which stage to begin.
-3. Review and explicitly approve each stage output.
-4. During Initialization, allow it to prepare the independent final repository.
-5. During Implementation, open and edit only the repository under `workspace/project/`.
-6. During release preparation, review the handoff and publish to CurseForge manually.
+2. Describe whether you are creating, adopting, or changing a mod.
+3. Review and approve the proposed workflow.
+4. Review and explicitly approve each required checkpoint and stage.
+5. Open and edit only the mod repository under `workspace/project/`.
+6. Publish prepared releases to CurseForge manually.
 
-Generated process artifacts are stored under `workspace/documentation/` and ignored by this repository. Preserve them separately when long-term history matters.
+Canonical project documents remain under `workspace/documentation/`. Change-specific plans and evidence are stored under `workspace/documentation/cycles/<cycle-id>/`. These files are ignored by the process repository; preserve them separately when long-term history matters.
 
 ## Git Boundaries
 
@@ -89,4 +99,4 @@ Agents follow the authorization rules in `guidelines/collaboration-guidelines.md
 git pull --ff-only
 ```
 
-Initialization records the exact template revision used, so updating this process repository does not alter an already initialized mod automatically.
+Initialization and adoption record exact source revisions, so updating this process repository does not alter an active mod automatically.

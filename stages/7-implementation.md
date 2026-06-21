@@ -13,10 +13,10 @@ Implementation includes coding, testing, in-game verification, defect correction
 ## Required Input
 
 - `workspace/documentation/project-status.md`
-- `workspace/documentation/implementation-plan.md`
-- The selected issue under `workspace/documentation/issues/`
+- `<artifact-root>/implementation-plan.md`
+- The selected issue under `<artifact-root>/issues/`
 - The requirements and architecture references named by that issue
-- The initialized project under `workspace/project/<project_directory_name>/`
+- The active project under `workspace/project/<project_directory_name>/`
 
 ## Objectives
 

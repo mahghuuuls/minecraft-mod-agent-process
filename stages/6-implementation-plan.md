@@ -12,8 +12,9 @@ Convert the approved requirements and architecture into small, ordered, and veri
 
 - `workspace/documentation/requirements.md`
 - `workspace/documentation/architecture.md`
-- `workspace/documentation/project-initialization.md`
-- The initialized project under `workspace/project/<project_directory_name>/`
+- The approved repository baseline identified by the active workflow
+- The active project under `workspace/project/<project_directory_name>/`
+- The active workflow's `<artifact-root>`
 
 ## Objectives
 
@@ -271,7 +272,7 @@ An implementation issue is Done only when:
 
 ## Output Artifacts
 
-### `workspace/documentation/implementation-plan.md`
+### `<artifact-root>/implementation-plan.md`
 
 Produce a Markdown document containing:
 
@@ -287,7 +288,7 @@ Produce a Markdown document containing:
 10. **Requirement Traceability**
 11. **Deferred Requirements**
 
-### `workspace/documentation/issues/`
+### `<artifact-root>/issues/`
 
 Create one Markdown file for each implementation issue:
 
@@ -317,7 +318,7 @@ This stage is complete when:
 - Each Ready issue can be understood by an agent with fresh context.
 - The Definition of Done is established.
 - The project owner explicitly approves the plan.
-- `workspace/documentation/implementation-plan.md` and the issue files have been generated and explicitly approved.
+- `<artifact-root>/implementation-plan.md` and the issue files have been generated and explicitly approved.
 
 Completion does not require writing implementation code.
 

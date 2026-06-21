@@ -13,8 +13,8 @@ The agent prepares and validates the release package. The project owner performs
 ## Required Input
 
 - `workspace/documentation/requirements.md`
-- `workspace/documentation/implementation-plan.md`
-- Completed issues under `workspace/documentation/issues/`
+- `<artifact-root>/implementation-plan.md`
+- Completed issues under `<artifact-root>/issues/`
 - The completed project under `workspace/project/<project_directory_name>/`
 - Implementation verification evidence
 
@@ -272,7 +272,7 @@ Prepare:
 Produce:
 
 ```text
-workspace/documentation/release-preparation.md
+<artifact-root>/release-preparation.md
 ```
 
 It should contain:
@@ -328,6 +328,6 @@ This stage is complete when:
 - The handoff artifact and checksum are recorded.
 - The project owner explicitly approves the package for manual publication.
 - Nothing was uploaded or published by the agent.
-- `workspace/documentation/release-preparation.md` has been generated and approved.
+- `<artifact-root>/release-preparation.md` has been generated and approved.
 
 Completion ends the agent-managed development process. Manual CurseForge publication remains the project owner's responsibility.
