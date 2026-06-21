@@ -12,6 +12,8 @@ Use one cycle per coherent release objective. Do not combine unrelated requests 
 
 ## Entry Conditions
 
+- An approved Project Setup is available and still matches the active repository.
+- The project owner approves Change Cycle.
 - An approved project baseline exists.
 - The active repository and current source revision are known.
 - No other workflow or change cycle is active.
@@ -21,6 +23,7 @@ If the repository has no approved baseline, use Existing Project Adoption first.
 
 ## Required Inputs
 
+- `workspace/documentation/project-setup.md`
 - `workspace/documentation/project-baseline.md`
 - `workspace/documentation/project-status.md`
 - Approved canonical project documents

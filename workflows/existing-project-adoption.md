@@ -12,6 +12,9 @@ Adoption must finish before feature work, bug fixes, compatibility updates, or r
 
 ## Entry Conditions
 
+- `workspace/documentation/project-setup.md` is approved.
+- Project Setup classifies the scenario as Existing Project Adoption.
+- The project owner approves this workflow.
 - The project owner identifies the existing repository.
 - No approved project baseline exists.
 - No other workflow is active.
@@ -21,6 +24,7 @@ The repository does not need to be empty. Project Initialization is not used.
 
 ## Required Inputs
 
+- `workspace/documentation/project-setup.md`
 - `workspace/project.properties`
 - Existing source code and Git history
 - Existing README, changelog, issue history, releases, and other supplied evidence

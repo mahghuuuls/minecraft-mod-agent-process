@@ -2,6 +2,20 @@
 
 This file is the authoritative source for workflow and stage status, approvals, artifact locations, and backward transitions.
 
+## Project Setup
+
+Before the first workflow, execute:
+
+| Stage | Definition | Primary Output |
+| --- | --- | --- |
+| 0. Project Setup | `stages/0-project-setup.md` | `workspace/documentation/project-setup.md` |
+
+Project Setup establishes the scenario, operational configuration, deferred prerequisites, and proposed workflow. It is required when no approved setup artifact exists.
+
+An approved setup may be carried forward across later workflows. Mark it **Needs Revision** and revisit Stage 0 when the active repository, template candidate, required environment, scenario, or operational configuration materially changes.
+
+A new mod may defer its final repository URL and directory name until Project Initialization. Adoption and Change Cycle require the existing repository identity before their first repository-dependent work.
+
 ## Workflow Control
 
 Every mod-development session belongs to one workflow:
@@ -50,7 +64,8 @@ workspace/documentation/project-status.md
 
 Create it when the first workflow begins. Record:
 
-- Mod name and active repository path
+- Project Setup status and approved setup artifact
+- Mod name and active repository path when known
 - Active workflow and workflow status
 - Approved baseline version and source revision, when available
 - Active cycle ID, when applicable
@@ -110,7 +125,7 @@ Canonical project documents always remain under:
 workspace/documentation/
 ```
 
-They describe the current approved project state and include concept, feasibility, requirements, architecture, project initialization or baseline, and project status.
+They describe the current approved project state and include project setup, concept, feasibility, requirements, architecture, project initialization or baseline, and project status.
 
 The selected workflow defines `<artifact-root>`:
 

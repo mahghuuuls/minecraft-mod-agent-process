@@ -12,18 +12,19 @@ Do not use it to adopt or update a repository that already contains mod history.
 
 ## Entry Conditions
 
-- The project owner confirms that this is a new mod.
+- `workspace/documentation/project-setup.md` is approved.
+- Project Setup classifies the scenario as a new mod.
+- The project owner approves Initial Development.
 - No other workflow is active.
-- `workspace/project.properties` identifies the intended final repository.
-- The final repository can satisfy the empty-repository requirement before Project Initialization.
 
-Concept work may begin before the final repository is created, but Initialization cannot.
+The final repository URL, directory name, and empty-repository creation may be deferred, but must be resolved before Project Initialization.
 
 ## Required Inputs
 
+- `workspace/documentation/project-setup.md`
 - The initial mod idea
 - Shared guidelines and defaults
-- `workspace/project.properties` when repository work begins
+- `workspace/project.properties` when repository values have been established
 
 ## Workflow-Specific AI Behavior
 

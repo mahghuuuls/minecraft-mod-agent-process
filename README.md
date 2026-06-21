@@ -1,8 +1,78 @@
 # Minecraft Mod Agent Process
 
-A reusable workspace for developing, adopting, and iteratively updating one Minecraft 1.12.2 mod at a time with AI agents.
+A guided workspace for developing Minecraft 1.12.2 mods with a coding agent such as Codex, Claude Code, Antigravity, or another agent that can inspect files and run development commands.
 
-The repository separates reusable instructions from ignored project documentation, temporary template files, and the independent final mod repository.
+This is not designed for one-prompt, unattended vibe coding. The agent interviews you, researches constraints, produces reviewable documents, plans the work, implements approved issues, and verifies the result. You remain responsible for product direction, important technical decisions, approval checkpoints, gameplay judgment, and manual CurseForge publication.
+
+## Quick Start
+
+Clone the repository:
+
+```bash
+git clone https://github.com/mahghuuuls/minecraft-mod-agent-process.git
+cd minecraft-mod-agent-process
+```
+
+Open the cloned directory with your coding agent and send:
+
+```text
+Read AGENTS.md and guide me through Project Setup for a new Minecraft 1.12.2 mod.
+```
+
+For an existing mod, replace the last phrase with either:
+
+```text
+I want to adopt an existing Minecraft 1.12.2 mod.
+```
+
+or:
+
+```text
+I want to make a change to an already adopted mod.
+```
+
+That is enough to begin. The agent should inspect the workspace, explain what is needed, configure known values, and guide you through unresolved prerequisites one question at a time.
+
+## What to Expect
+
+The agent will:
+
+1. Run Project Setup.
+2. Determine and propose the appropriate workflow.
+3. Guide you through focused stages with explicit boundaries.
+4. Produce project-specific documents outside the final mod repository.
+5. Initialize or preserve the independent mod repository at the correct time.
+6. Implement approved issues with verification and independent review.
+7. Prepare presentation, artwork, the release artifact, and a manual publication handoff.
+
+The agent stops for approval between stages. It should challenge ambiguity and report failed verification rather than inventing decisions or declaring success prematurely.
+
+## Your Role
+
+Expect to participate in:
+
+- Mod purpose, features, and boundaries
+- Requirements and edge cases
+- Architecture approval
+- Artistic direction and icon selection
+- In-game and multiplayer judgment
+- Review of implementation results
+- Manual creation or management of GitHub and CurseForge resources
+- Final publication
+
+The process is intended to make agent-assisted development controlled and understandable, not autonomous at any cost.
+
+## Manual Setup
+
+Manual configuration is optional. The agent can guide you through it.
+
+For manual instructions, see [Manual Workspace Setup](setup/manual-workspace-setup.md).
+
+## Supported Workflows
+
+- **Initial Development:** create and prepare the first release of a new mod.
+- **Existing Project Adoption:** document and approve an existing mod without changing its behavior.
+- **Change Cycle:** deliver a feature, fix, compatibility update, or refactor against an approved baseline.
 
 ## Repository Structure
 
@@ -22,77 +92,26 @@ minecraft-mod-agent-process/
     └── template/
 ```
 
-- `AGENTS.md` is the agent entry point and workflow router.
-- `guidelines/` contains core rules, process control, and specialized on-demand instructions.
-- `workflows/` defines scenario-specific agent behavior and stage routing.
-- `stages/` contains reusable stage instructions.
-- `setup/` contains configuration examples and new-project initialization.
+- `AGENTS.md` is the agent entry point.
+- `guidelines/` contains core and specialized rules.
+- `workflows/` defines scenario-specific routing.
+- `stages/` defines setup and development stages.
+- `setup/` contains optional manual setup, defaults, and initialization procedures.
 - `references/` contains curated technical links.
-- `workspace/` contains ignored, project-specific runtime data, including temporary artwork and references.
+- `workspace/` contains ignored project-specific configuration, documents, artwork, templates, and the active mod.
 
-## Supported Workflows
-
-- **Initial Development:** create and prepare the first release of a new mod.
-- **Existing Project Adoption:** document and approve the baseline of an existing mod without changing it.
-- **Change Cycle:** deliver an iterative feature, fix, compatibility update, or refactor against an approved baseline.
-
-The agent selects a workflow from repository state and asks for approval before beginning it. See `guidelines/process-control.md` for status, approval, and artifact rules.
-
-## Prerequisites
-
-Install Git and the development environment specified by `guidelines/project-defaults.md`.
-
-For Initial Development, create an empty GitHub repository without a README, license, `.gitignore`, or initial commit. Existing Project Adoption and Change Cycle use the existing repository with its history intact.
-
-## Clone
-
-```bash
-git clone https://github.com/mahghuuuls/minecraft-mod-agent-process.git
-cd minecraft-mod-agent-process
-```
-
-No submodules are required. Use a separate clone of this process repository for each mod project.
-
-## Configure a Project
-
-Create the ignored project configuration:
-
-```bash
-cp setup/project.properties.example workspace/project.properties
-```
-
-Set the GitHub repository and its local directory name:
-
-```properties
-project_repository_url=https://github.com/mahghuuuls/example-mod.git
-project_directory_name=example-mod
-```
-
-For Initial Development, the repository must be empty before Initialization. For adoption or a change cycle, it is the existing mod repository.
-
-Shared template and identity defaults remain in `setup/template-defaults.properties`. Project-specific overrides belong in `workspace/project.properties`.
-
-## Run the Process
-
-1. Start the agent from the process repository root.
-2. Describe whether you are creating, adopting, or changing a mod.
-3. Review and approve the proposed workflow.
-4. Review and explicitly approve each required checkpoint and stage.
-5. Open and edit only the mod repository under `workspace/project/`.
-6. Publish prepared releases to CurseForge manually.
-
-Canonical project documents remain under `workspace/documentation/`. Change-specific plans and evidence are stored under `workspace/documentation/cycles/<cycle-id>/`. These files are ignored by the process repository; preserve them separately when long-term history matters.
+Use a separate clone of this process repository for each mod project.
 
 ## Git Boundaries
 
-The outer process repository, temporary template clone, and final mod repository have separate purposes and histories. Before running Git commands, confirm the target:
+The process repository, temporary template clone, and final mod repository have separate purposes and histories. Before running Git commands, confirm the target:
 
 ```bash
 git status
 git -C workspace/project/<mod-name> status
 ```
 
-Agents follow the authorization rules in `guidelines/collaboration-guidelines.md`.
+Agents must follow `guidelines/collaboration-guidelines.md`. Commits, pushes, external changes, uploads, and publication require the appropriate explicit authorization.
 
 ## Update the Process
 
@@ -100,4 +119,4 @@ Agents follow the authorization rules in `guidelines/collaboration-guidelines.md
 git pull --ff-only
 ```
 
-Initialization and adoption record exact source revisions, so updating this process repository does not alter an active mod automatically.
+Recorded source and template revisions keep active mod work traceable when the reusable process changes.
