@@ -1,4 +1,0 @@
-[submodule "template/ForgeDevEnv"]
-	path = template/ForgeDevEnv
-	url = https://github.com/CleanroomMC/ForgeDevEnv.git
-	branch = master
