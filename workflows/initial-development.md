@@ -34,6 +34,10 @@ Concept work may begin before the final repository is created, but Initializatio
 - Treat the approved release candidate as provisional until the owner reports the manual publication result.
 - Never upload or publish the mod.
 
+## Stage Routing
+
+All eight reusable stages are **Required**. Record that disposition for every stage in `project-status.md`.
+
 ## Sequence
 
 1. Record this workflow as **In Progress** in `project-status.md`.
