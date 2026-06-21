@@ -36,7 +36,7 @@ Concept work may begin before the final repository is created, but Initializatio
 
 ## Stage Routing
 
-All eight reusable stages are **Required**. Record that disposition for every stage in `project-status.md`.
+All nine reusable stages are **Required**. Record that disposition for every stage in `project-status.md`.
 
 ## Sequence
 
@@ -48,10 +48,11 @@ All eight reusable stages are **Required**. Record that disposition for every st
 6. Execute Project Initialization.
 7. Execute Implementation Plan.
 8. Execute Implementation.
-9. Execute Packaging and Release Preparation.
-10. Keep the workflow **In Progress** and set its manual publication state to **Ready for Publication**.
-11. After the owner reports publication, record the published version and source revision in `project-baseline.md`.
-12. Present the completed workflow record for approval.
+9. Execute Release Presentation.
+10. Execute Packaging and Release Validation.
+11. Keep the workflow **In Progress** and set its manual publication state to **Ready for Publication**.
+12. After the owner reports publication, record the published version and source revision in `project-baseline.md`.
+13. Present the completed workflow record for approval.
 
 Each stage and the final workflow record follow the approval lifecycle in `guidelines/process-control.md`.
 
@@ -79,8 +80,8 @@ Do not claim or independently verify publication unless the project owner provid
 
 This workflow is complete when:
 
-- All eight reusable stages are approved.
-- The release-preparation handoff is approved.
+- All nine reusable stages are approved.
+- Release Presentation and Packaging and Release Validation are approved.
 - The project owner reports the manual publication result.
 - `project-baseline.md` records the published baseline.
 - The workflow is explicitly approved as complete.

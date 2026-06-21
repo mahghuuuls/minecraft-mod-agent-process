@@ -93,7 +93,7 @@ Use these stage dispositions:
 - **Not Applicable:** The stage does not apply to this workflow.
 - **Blocked:** Routing cannot be approved until missing evidence or a decision is supplied.
 
-Project Initialization is always **Not Applicable**. Implementation Plan, Implementation, and Packaging and Release Preparation are normally **Revisit** for a code change.
+Project Initialization is always **Not Applicable**. Implementation Plan, Implementation, Release Presentation, and Packaging and Release Validation are normally **Revisit** for a releasable code change. Existing branding may be carried forward within Release Presentation.
 
 Present the complete intake and proposed route for explicit approval before revising canonical documents or code.
 
@@ -110,11 +110,12 @@ Present the complete intake and proposed route for explicit approval before revi
 9. Execute each **Revisit** stage in normal stage order.
 10. Execute Implementation Plan using the cycle artifact root.
 11. Execute Implementation using the cycle issues.
-12. Execute Packaging and Release Preparation using the cycle artifact root.
-13. Produce `<artifact-root>/cycle-summary.md`.
-14. Keep the workflow **In Progress** and set its manual publication state to **Ready for Publication**.
-15. After the owner reports publication, update `project-baseline.md` with the new version and source revision.
-16. Present the completed cycle for approval.
+12. Execute Release Presentation using the cycle artifact root.
+13. Execute Packaging and Release Validation using the cycle artifact root.
+14. Produce `<artifact-root>/cycle-summary.md`.
+15. Keep the workflow **In Progress** and set its manual publication state to **Ready for Publication**.
+16. After the owner reports publication, update `project-baseline.md` with the new version and source revision.
+17. Present the completed cycle for approval.
 
 Do not enter a later selected stage until every selected prerequisite is approved. Discovery of additional impact follows the backward-transition rules in `guidelines/process-control.md`.
 
@@ -142,7 +143,7 @@ The agent-managed work is ready for manual publication when:
 - Change Intake and the selected route are approved.
 - Every **Revisit** stage is approved.
 - Every required cycle issue is Done.
-- Release preparation is approved.
+- Release Presentation and Packaging and Release Validation are approved.
 - The cycle summary records the final handoff.
 
 The workflow is complete when the project owner reports the publication result, the canonical baseline is updated, and the completed cycle is explicitly approved.

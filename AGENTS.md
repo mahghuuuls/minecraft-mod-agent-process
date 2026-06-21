@@ -53,12 +53,13 @@ Record the approved workflow in `project-status.md`.
 For mod-development work, read in this order:
 
 1. `AGENTS.md`
-2. Every file under `guidelines/`
+2. The core guideline files listed under **Instruction Ownership**
 3. `workspace/documentation/project-status.md`, when present
 4. The selected file under `workflows/`
 5. The active stage under `stages/`, when the workflow invokes one
-6. The approved artifacts referenced by the workflow or stage
-7. The relevant implementation issue and source code, when applicable
+6. Any specialized guideline explicitly referenced by the active workflow or stage
+7. The approved artifacts referenced by the workflow or stage
+8. The relevant implementation issue and source code, when applicable
 
 Do not silently resolve contradictions between sources. Follow the precedence and revision rules in `guidelines/process-control.md`.
 
@@ -68,6 +69,7 @@ Do not silently resolve contradictions between sources. Follow the precedence an
 - `guidelines/process-control.md`: workflow and stage status, approval, artifacts, and backward transitions.
 - `guidelines/collaboration-guidelines.md`: communication, editing, Git authorization, and completion reporting.
 - `guidelines/coding-standards.md`: implementation and verification conventions.
+- Specialized guideline files under `guidelines/`: task-specific instructions read only when an active workflow or stage references them.
 - `workflows/*.md`: scenario selection consequences, routing, and workflow-specific behavior.
 - `setup/initialize-project.md`: operational initialization procedure for a new repository.
 - `stages/*.md`: concerns, outputs, and completion criteria unique to reusable stages.

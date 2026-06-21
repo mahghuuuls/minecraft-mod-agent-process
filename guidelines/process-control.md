@@ -35,7 +35,8 @@ A workflow may skip a reusable stage only when its routing rules allow it and th
 | 5. Project Initialization | `stages/5-initialization.md` | `workspace/documentation/project-initialization.md` |
 | 6. Implementation Plan | `stages/6-implementation-plan.md` | `<artifact-root>/implementation-plan.md` and `issues/` |
 | 7. Implementation | `stages/7-implementation.md` | Completed code and issue evidence |
-| 8. Packaging and Release Preparation | `stages/8-packaging-release-preparation.md` | `<artifact-root>/release-preparation.md` and release handoff |
+| 8. Release Presentation | `stages/8-release-presentation.md` | `<artifact-root>/release-presentation.md` |
+| 9. Packaging and Release Validation | `stages/9-packaging-release-validation.md` | `<artifact-root>/release-handoff.md` |
 
 When a workflow invokes multiple stages, perform them in this order. Initial Development uses all stages. Other workflows define their approved route.
 
@@ -117,7 +118,7 @@ The selected workflow defines `<artifact-root>`:
 - Existing Project Adoption: `workspace/documentation/`
 - Change Cycle: `workspace/documentation/cycles/<cycle-id>/`
 
-Cycle directories contain only change-specific intake, plans, issues, evidence, summaries, and release preparation. They must not contain full copies of canonical project documents.
+Cycle directories contain only change-specific intake, plans, issues, evidence, summaries, release presentation, and release handoff. They must not contain full copies of canonical project documents.
 
 Mod source, repository documentation, release assets, and build outputs belong in the nested mod repository.
 

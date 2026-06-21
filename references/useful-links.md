@@ -54,3 +54,10 @@ Prefer version-specific and primary sources. These links are starting points for
 
 - [MinecraftDev for RetroFuturaGradle](https://github.com/eigenraven/MinecraftDev/releases)  
   IntelliJ plugin fork recommended by ForgeDevEnv.
+
+## CurseForge Presentation and Assets
+
+- [Project Submission Guide and Tips](https://support.curseforge.com/support/solutions/articles/9000199552-project-submission-guide-and-tips)
+  - Current project logo, description, and presentation guidance
+- [Moderation Policies](https://support.curseforge.com/support/solutions/articles/9000197279)
+  - Current avatar, originality, copyright, and content requirements

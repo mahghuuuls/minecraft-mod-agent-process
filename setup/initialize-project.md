@@ -250,7 +250,7 @@ Inspect README files, changelogs, example descriptions, sample assets, placehold
 
 Remove or reset content that describes the template rather than the mod.
 
-Do not create the final user-facing README or changelog during Initialization. Those belong to Packaging and Release Preparation.
+Do not create the final user-facing README or changelog during Initialization. Those belong to Release Presentation.
 
 Retain technical documentation only when it remains accurate and useful for developing the initialized project.
 

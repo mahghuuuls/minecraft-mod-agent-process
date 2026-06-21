@@ -52,7 +52,8 @@ Act as a baseline investigator.
 | Project Initialization | Not Applicable | Preserve the existing repository and history |
 | Implementation Plan | Not Applicable | Adoption does not plan changes |
 | Implementation | Not Applicable | Adoption does not change production behavior |
-| Packaging and Release Preparation | Not Applicable | Adoption does not prepare a new release |
+| Release Presentation | Not Applicable | Adoption does not prepare a new release |
+| Packaging and Release Validation | Not Applicable | Adoption does not build a release handoff |
 
 Record this route in `project-status.md`.
 

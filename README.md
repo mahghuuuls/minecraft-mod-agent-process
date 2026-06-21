@@ -16,18 +16,19 @@ minecraft-mod-agent-process/
 ├── setup/
 └── workspace/
     ├── documentation/
+    ├── artwork/
     ├── project/
     ├── project.properties
     └── template/
 ```
 
 - `AGENTS.md` is the agent entry point and workflow router.
-- `guidelines/` contains shared rules and process control.
+- `guidelines/` contains core rules, process control, and specialized on-demand instructions.
 - `workflows/` defines scenario-specific agent behavior and stage routing.
 - `stages/` contains reusable stage instructions.
 - `setup/` contains configuration examples and new-project initialization.
 - `references/` contains curated technical links.
-- `workspace/` contains ignored, project-specific runtime data.
+- `workspace/` contains ignored, project-specific runtime data, including temporary artwork and references.
 
 ## Supported Workflows
 

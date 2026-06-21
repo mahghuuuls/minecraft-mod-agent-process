@@ -310,6 +310,6 @@ The Implementation stage is complete when:
 - The code matches the approved architecture.
 - Approved documents reflect any accepted changes made during implementation.
 - No required issue remains Backlog, Ready, In Progress, Review, or Blocked.
-- The project owner approves the implemented mod for Packaging and Release Preparation.
+- The project owner approves the implemented mod for Release Presentation.
 
 Completion does not include preparing user-facing documentation, creating release assets, building the final distributable release, or publishing to CurseForge.
