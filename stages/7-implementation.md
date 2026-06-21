@@ -12,14 +12,17 @@ Implementation includes coding, testing, in-game verification, defect correction
 
 ## Required Input
 
-- `mod-project-defaults.md`
-- `concept-and-scope.md`
-- `feasibility-research.md`
-- `requirements.md`
-- `architecture.md`
-- `implementation-plan.md`
+- `guidelines/project-defaults.md`
+- `guidelines/collaboration-guidelines.md`
+- `guidelines/coding-standards.md`
+- `workspace/documentation/concept-and-scope.md`
+- `workspace/documentation/feasibility-research.md`
+- `workspace/documentation/requirements.md`
+- `workspace/documentation/architecture.md`
+- `workspace/documentation/project-initialization.md`
+- `workspace/documentation/implementation-plan.md`
 - The relevant issue file under `issues/`
-- The current project source code
+- The initialized project under `workspace/project/<project_directory_name>/`
 
 Read and follow all relevant input documents before beginning an issue.
 
@@ -217,7 +220,7 @@ Implementation and review must use separate agent contexts.
 
 The review agent must receive:
 
-- `mod-project-defaults.md`
+- `guidelines/project-defaults.md`
 - The relevant requirements
 - The relevant architecture sections
 - The implementation issue
@@ -301,6 +304,14 @@ An issue is complete when:
 - Any remaining limitations are explicit and approved.
 - The issue status is **Done**.
 
+## Stage Approval
+
+- Treat this stage and its artifacts as **In Progress** while work is being developed.
+- When the output is ready for review, update `workspace/documentation/project-status.md` to **Awaiting Approval** and present the complete result.
+- Only the project owner may mark the stage **Approved**.
+- Do not begin the next stage automatically.
+- If new evidence invalidates an earlier approved stage, stop, mark the affected stages **Needs Revision**, identify the conflict, and resume only after the earlier stage is corrected and approved again.
+
 ## Stage Completion Criteria
 
 The Implementation stage is complete when:
@@ -315,6 +326,6 @@ The Implementation stage is complete when:
 - The code matches the approved architecture.
 - Approved documents reflect any accepted changes made during implementation.
 - No required issue remains Backlog, Ready, In Progress, Review, or Blocked.
-- The project owner approves the implemented mod for Packaging and Release.
+- The project owner approves the implemented mod for Packaging and Release Preparation.
 
 Completion does not include preparing user-facing documentation, creating release assets, building the final distributable release, or publishing to CurseForge.

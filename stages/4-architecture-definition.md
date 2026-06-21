@@ -12,10 +12,12 @@ The architecture should provide a clear map of where responsibilities belong and
 
 ## Required Input
 
-- `mod-project-defaults.md`
-- `concept-and-scope.md`
-- `feasibility-research.md`
-- `requirements.md`
+- `guidelines/project-defaults.md`
+- `guidelines/collaboration-guidelines.md`
+- `guidelines/coding-standards.md`
+- `workspace/documentation/concept-and-scope.md`
+- `workspace/documentation/feasibility-research.md`
+- `workspace/documentation/requirements.md`
 
 Read and follow all input documents before beginning this stage.
 
@@ -168,12 +170,12 @@ Minor and self-evident choices do not require separate decision records.
 11. Identify performance-sensitive and verification-sensitive areas.
 12. Review the architecture for unnecessary complexity and coupling.
 13. Trace components and decisions to requirements.
-14. Present the proposed architecture for approval.
-15. After approval, generate `architecture.md`.
+14. Generate `workspace/documentation/architecture.md` as a complete draft.
+15. Present the draft for review and revise it until explicitly approved.
 
 ## Output Artifact
 
-Produce a Markdown document named `architecture.md` containing:
+Produce a Markdown document named `workspace/documentation/architecture.md` containing:
 
 1. **Architecture Overview**
 2. **Goals and Quality Attributes**
@@ -201,6 +203,14 @@ Omit sections that do not apply rather than inventing architectural concerns.
 
 Use compact Mermaid diagrams when they make component relationships or runtime flows easier to understand. Diagrams must supplement the written responsibilities and dependency rules, not replace them.
 
+## Stage Approval
+
+- Treat this stage and its artifacts as **In Progress** while work is being developed.
+- When the output is ready for review, update `workspace/documentation/project-status.md` to **Awaiting Approval** and present the complete result.
+- Only the project owner may mark the stage **Approved**.
+- Do not begin the next stage automatically.
+- If new evidence invalidates an earlier approved stage, stop, mark the affected stages **Needs Revision**, identify the conflict, and resume only after the earlier stage is corrected and approved again.
+
 ## Completion Criteria
 
 This stage is complete when:
@@ -219,7 +229,7 @@ This stage is complete when:
 - Implementation uncertainties are explicitly recorded.
 - A developer can determine where each major behavior belongs.
 - The project owner explicitly approves the architecture.
-- `architecture.md` has been generated.
+- `workspace/documentation/architecture.md` has been generated and explicitly approved.
 
 Completion does not require defining every class, method, or implementation detail.
 

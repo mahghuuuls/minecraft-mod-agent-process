@@ -12,6 +12,9 @@ Initialization prepares the real codebase for implementation planning. It does n
 
 ## Required Input
 
+- `guidelines/project-defaults.md`
+- `guidelines/collaboration-guidelines.md`
+- `guidelines/coding-standards.md`
 - `setup/template-defaults.properties`
 - `workspace/project.properties`
 - `setup/initialize-project.md`
@@ -80,7 +83,7 @@ If a precondition fails, mark the stage blocked and identify the required correc
 - Check for unresolved functional placeholders
 - Build and inspect the initialized project
 - Create the first approved local commit
-- Generate `project-initialization.md`
+- Generate `workspace/documentation/project-initialization.md`
 
 ## Out of Scope
 
@@ -143,11 +146,11 @@ Do not resolve contradictions silently. Operational overrides must not change ap
 13. Validate placeholders, repository identity, branch, and remote.
 14. Determine and run the appropriate build.
 15. Inspect the generated baseline artifact.
-16. Generate a draft `project-initialization.md`.
+16. Generate a draft `workspace/documentation/project-initialization.md`.
 17. Present the changes and verification evidence.
 18. Obtain explicit approval for the first local commit.
 19. Create the local initial commit.
-20. Record its SHA in `project-initialization.md`.
+20. Record its SHA in `workspace/documentation/project-initialization.md`.
 21. Present the completed stage for approval.
 
 ## Output Artifact
@@ -201,6 +204,14 @@ The commit must:
 - Remain local
 
 Approval to create the commit does not authorize pushing it.
+
+## Stage Approval
+
+- Treat this stage and its artifacts as **In Progress** while work is being developed.
+- When the output is ready for review, update `workspace/documentation/project-status.md` to **Awaiting Approval** and present the complete result.
+- Only the project owner may mark the stage **Approved**.
+- Do not begin the next stage automatically.
+- If new evidence invalidates an earlier approved stage, stop, mark the affected stages **Needs Revision**, identify the conflict, and resume only after the earlier stage is corrected and approved again.
 
 ## Completion Criteria
 

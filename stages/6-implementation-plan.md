@@ -10,11 +10,15 @@ Convert the approved requirements and architecture into small, ordered, and veri
 
 ## Required Input
 
-- `mod-project-defaults.md`
-- `concept-and-scope.md`
-- `feasibility-research.md`
-- `requirements.md`
-- `architecture.md`
+- `guidelines/project-defaults.md`
+- `guidelines/collaboration-guidelines.md`
+- `guidelines/coding-standards.md`
+- `workspace/documentation/concept-and-scope.md`
+- `workspace/documentation/feasibility-research.md`
+- `workspace/documentation/requirements.md`
+- `workspace/documentation/architecture.md`
+- `workspace/documentation/project-initialization.md`
+- The initialized project under `workspace/project/<project_directory_name>/`
 
 Read and follow all input documents before beginning this stage.
 
@@ -115,7 +119,6 @@ Do not split work entirely into layers such as:
 
 Some horizontal or foundational work may still be necessary, including:
 
-- Initial project configuration
 - Shared registration infrastructure
 - Test infrastructure
 - Required dependency setup
@@ -270,12 +273,12 @@ An implementation issue is Done only when:
 12. Schedule risky assumptions and validation work early.
 13. Confirm that every required behavior is covered.
 14. Identify optional requirements that will be deferred.
-15. Present the plan for project-owner approval.
-16. After approval, generate the implementation-plan artifacts.
+15. Generate the implementation-plan artifacts as complete drafts.
+16. Present the drafts for review and revise them until explicitly approved.
 
 ## Output Artifacts
 
-### `implementation-plan.md`
+### `workspace/documentation/implementation-plan.md`
 
 Produce a Markdown document containing:
 
@@ -291,7 +294,7 @@ Produce a Markdown document containing:
 10. **Requirement Traceability**
 11. **Deferred Requirements**
 
-### `issues/`
+### `workspace/documentation/issues/`
 
 Create one Markdown file for each implementation issue:
 
@@ -303,6 +306,14 @@ issues/
 ```
 
 The implementation plan should reference these files instead of duplicating their full contents.
+
+## Stage Approval
+
+- Treat this stage and its artifacts as **In Progress** while work is being developed.
+- When the output is ready for review, update `workspace/documentation/project-status.md` to **Awaiting Approval** and present the complete result.
+- Only the project owner may mark the stage **Approved**.
+- Do not begin the next stage automatically.
+- If new evidence invalidates an earlier approved stage, stop, mark the affected stages **Needs Revision**, identify the conflict, and resume only after the earlier stage is corrected and approved again.
 
 ## Completion Criteria
 
@@ -321,7 +332,7 @@ This stage is complete when:
 - Each Ready issue can be understood by an agent with fresh context.
 - The Definition of Done is established.
 - The project owner explicitly approves the plan.
-- `implementation-plan.md` and the issue files have been generated.
+- `workspace/documentation/implementation-plan.md` and the issue files have been generated and explicitly approved.
 
 Completion does not require writing implementation code.
 

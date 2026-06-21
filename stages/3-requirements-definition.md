@@ -10,9 +10,10 @@ Convert the approved concept into precise, observable, and testable behavior wit
 
 ## Required Input
 
-- `mod-project-defaults.md`
-- `concept-and-scope.md`
-- `feasibility-research.md`
+- `guidelines/project-defaults.md`
+- `guidelines/collaboration-guidelines.md`
+- `workspace/documentation/concept-and-scope.md`
+- `workspace/documentation/feasibility-research.md`
 - Any approved decisions produced from feasibility findings
 
 Read and follow all input documents before beginning this stage.
@@ -157,12 +158,12 @@ Notes should not prescribe implementation unless the detail is an established pr
 10. Add objective acceptance criteria.
 11. Check every requirement for clarity, consistency, feasibility, and testability.
 12. Trace requirements back to approved features.
-13. Present the complete requirements for approval.
-14. After approval, generate `requirements.md`.
+13. Generate `workspace/documentation/requirements.md` as a complete draft.
+14. Present the draft for review and revise it until explicitly approved.
 
 ## Output Artifact
 
-Produce a Markdown document named `requirements.md` containing:
+Produce a Markdown document named `workspace/documentation/requirements.md` containing:
 
 1. **Purpose and Scope**
 2. **Referenced Documents**
@@ -183,6 +184,14 @@ Produce a Markdown document named `requirements.md` containing:
 
 Omit categories that do not apply rather than inventing requirements.
 
+## Stage Approval
+
+- Treat this stage and its artifacts as **In Progress** while work is being developed.
+- When the output is ready for review, update `workspace/documentation/project-status.md` to **Awaiting Approval** and present the complete result.
+- Only the project owner may mark the stage **Approved**.
+- Do not begin the next stage automatically.
+- If new evidence invalidates an earlier approved stage, stop, mark the affected stages **Needs Revision**, identify the conflict, and resume only after the earlier stage is corrected and approved again.
+
 ## Completion Criteria
 
 This stage is complete when:
@@ -199,7 +208,7 @@ This stage is complete when:
 - Every requirement is traceable to the approved concept or a documented constraint.
 - No unresolved question remains that could materially change the requirements or architecture.
 - The project owner explicitly approves the requirements.
-- `requirements.md` has been generated.
+- `workspace/documentation/requirements.md` has been generated and explicitly approved.
 
 Completion does not require deciding how the requirements will be implemented.
 

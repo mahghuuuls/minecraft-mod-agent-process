@@ -11,10 +11,11 @@ Establish a shared understanding of what the mod should accomplish and where its
 ## Required Input
 
 - The initial mod idea or problem statement
-- `mod-project-defaults.md`
+- `guidelines/project-defaults.md`
+- `guidelines/collaboration-guidelines.md`
 - Any examples or references supplied by the project owner
 
-Read and follow `mod-project-defaults.md` before beginning this stage.
+Read and follow `guidelines/project-defaults.md` before beginning this stage.
 
 ## Objectives
 
@@ -76,25 +77,25 @@ Act as an alignment interviewer.
 - Periodically summarize the current understanding.
 - Ask the project owner to correct or confirm each summary.
 - Continue until the concept and boundaries have shared agreement.
-- Generate the final document only after receiving explicit approval.
+- Generate a complete draft artifact when alignment is sufficient, then revise it until the project owner approves it.
 
 Focus the interview on decisions that could materially change the project's identity or scope. Do not attempt to explore every detailed behavioral edge case.
 
 ## Process
 
-1. Read `mod-project-defaults.md`.
+1. Read `guidelines/project-defaults.md`.
 2. Receive the initial mod idea.
 3. Identify the most important unresolved concept-level question.
 4. Interview the project owner one question at a time.
 5. Record decisions, assumptions, boundaries, and open questions.
 6. Periodically summarize the current shared understanding.
 7. Resolve concept-level contradictions and ambiguities.
-8. Present a final summary for approval.
-9. After approval, generate `concept-and-scope.md`.
+8. Generate `workspace/documentation/concept-and-scope.md` as a complete draft.
+9. Present the draft for review and revise it until explicitly approved.
 
 ## Output Artifact
 
-Produce a Markdown document named `concept-and-scope.md` containing:
+Produce a Markdown document named `workspace/documentation/concept-and-scope.md` containing:
 
 1. **Purpose**
 2. **Problem Statement**
@@ -113,6 +114,14 @@ Produce a Markdown document named `concept-and-scope.md` containing:
 
 Omit sections without relevant content instead of inventing information.
 
+## Stage Approval
+
+- Treat this stage and its artifacts as **In Progress** while work is being developed.
+- When the output is ready for review, update `workspace/documentation/project-status.md` to **Awaiting Approval** and present the complete result.
+- Only the project owner may mark the stage **Approved**.
+- Do not begin the next stage automatically.
+- If new evidence invalidates an earlier approved stage, stop, mark the affected stages **Needs Revision**, identify the conflict, and resume only after the earlier stage is corrected and approved again.
+
 ## Completion Criteria
 
 This stage is complete when:
@@ -126,7 +135,7 @@ This stage is complete when:
 - No unresolved concept-level contradictions remain.
 - Technical uncertainties are recorded for Feasibility Research.
 - The project owner explicitly approves the final understanding.
-- `concept-and-scope.md` has been generated.
+- `workspace/documentation/concept-and-scope.md` has been generated and explicitly approved.
 
 Completion does not require proving technical feasibility or defining detailed behavior.
 

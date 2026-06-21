@@ -12,8 +12,9 @@ This stage performs research. It does not write or test implementation code.
 
 ## Required Input
 
-- `mod-project-defaults.md`
-- `concept-and-scope.md`
+- `guidelines/project-defaults.md`
+- `guidelines/collaboration-guidelines.md`
+- `workspace/documentation/concept-and-scope.md`
 - Any source code, mod files, documentation, or references relevant to the concept
 
 Read and follow the input documents before beginning this stage.
@@ -68,7 +69,7 @@ When research cannot establish feasibility confidently, record the uncertainty a
 
 Act as a technical researcher.
 
-- Extract technical assumptions and uncertainties from `concept-and-scope.md`.
+- Extract technical assumptions and uncertainties from `workspace/documentation/concept-and-scope.md`.
 - Prioritize questions that could invalidate the project or materially change its scope.
 - Prefer official repositories, source code, primary documentation, and version-specific evidence.
 - Distinguish confirmed facts, reasonable inferences, and unresolved questions.
@@ -129,11 +130,12 @@ Do not classify a feature as feasible merely because a possible approach can be 
 9. Identify risks and questions requiring later validation.
 10. Present findings that require project-owner decisions.
 11. Return to Concept and Scope if findings require material scope changes.
-12. After the findings are accepted, generate `feasibility-research.md`.
+12. Generate `workspace/documentation/feasibility-research.md` as a complete draft.
+13. Present the draft for review and revise it until explicitly approved.
 
 ## Output Artifact
 
-Produce `feasibility-research.md` containing:
+Produce `workspace/documentation/feasibility-research.md` containing:
 
 1. **Executive Conclusion**
 2. **Research Questions**
@@ -151,6 +153,14 @@ Produce `feasibility-research.md` containing:
 14. **Constraints for Requirements and Architecture**
 15. **Evidence and References**
 
+## Stage Approval
+
+- Treat this stage and its artifacts as **In Progress** while work is being developed.
+- When the output is ready for review, update `workspace/documentation/project-status.md` to **Awaiting Approval** and present the complete result.
+- Only the project owner may mark the stage **Approved**.
+- Do not begin the next stage automatically.
+- If new evidence invalidates an earlier approved stage, stop, mark the affected stages **Needs Revision**, identify the conflict, and resume only after the earlier stage is corrected and approved again.
+
 ## Completion Criteria
 
 This stage is complete when:
@@ -165,7 +175,7 @@ This stage is complete when:
 - Required scope reconsiderations have been resolved.
 - Constraints for Requirements and Architecture are documented.
 - The project owner accepts the findings.
-- `feasibility-research.md` has been generated.
+- `workspace/documentation/feasibility-research.md` has been generated and explicitly approved.
 
 Completion does not require experimentally proving every technical conclusion. Remaining uncertainty must be explicit and assigned for later validation.
 
