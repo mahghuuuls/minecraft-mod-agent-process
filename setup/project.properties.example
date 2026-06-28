@@ -11,6 +11,7 @@ project_directory_name=
 # Mod identity:
 mod_id=
 display_name=
+public_mod_description=
 root_package=
 main_class=
 mod_authors=
