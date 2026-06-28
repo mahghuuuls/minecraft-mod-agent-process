@@ -20,13 +20,15 @@ This file defines shared Minecraft, Java, distribution, branch, naming, document
 
 ### Project Configuration
 
-Read:
+Read when present:
 
 ```text
 workspace/project.properties
 ```
 
-This ignored file defines the approved repository, loader, runtimes, distribution platforms, template, project identity, and any operational overrides.
+This ignored file defines approved repository, loader, runtime, distribution, template, project identity, and operational override values that are already known. It may be incomplete or absent when Project Initialization begins.
+
+Create or update it during this procedure after the project owner approves missing operational values.
 
 ### Approved Project Documents
 
@@ -38,7 +40,7 @@ Read:
 - `workspace/documentation/requirements.md`
 - `workspace/documentation/architecture.md`
 
-These documents provide the mod name, purpose, description, mod ID, package structure, main class, dependencies, integrations, and architectural constraints.
+These documents provide approved behavior, constraints, loader/template decisions, description when already defined, dependencies, integrations, and architectural constraints.
 
 ## Resolve Configuration
 
@@ -60,6 +62,7 @@ project_directory_name
 project_default_branch
 mod_id
 display_name
+public_mod_description
 root_package
 main_class
 mod_authors
@@ -72,11 +75,37 @@ license
 
 Project configuration supplies project-specific values and may override shared preferences. Approved documents may supply values that are not yet written to `workspace/project.properties`.
 
-Every required value must be nonempty and consistent with approved documents before cloning. When a value can be derived from approved defaults, derive it, present it to the project owner, and record the approved value before cloning.
+Missing repository and project identity values are normal at the start of this stage. Resolve them inside this procedure by asking the project owner. Every required value must be nonempty, approved, and consistent with approved documents before cloning the template or final repository.
+
+When a value can be derived from approved defaults, derive it, present it to the project owner, and record the approved value before cloning.
 
 Do not permit an operational override to silently contradict approved project documentation.
 
 Do not log credentials or embed authentication tokens in generated documents.
+
+## Resolve Missing Initialization Values
+
+At the beginning of Project Initialization, inspect `workspace/project.properties` and approved artifacts. Identify any missing or ambiguous values needed to create the repository baseline.
+
+The following values may be missing when this stage begins and should be resolved here:
+
+- Final repository URL
+- Project directory name
+- GitHub username or repository owner
+- Repository name
+- Mod ID
+- Display name
+- Public mod description
+- Root package
+- Main class
+
+Ask the project owner only for values that cannot be inspected, derived, or proposed safely.
+
+Do not return to Project Setup, Concept and Scope, Feasibility Research, Requirements Definition, or Architecture Definition merely because one of these operational identity values is missing. Return to an earlier stage only when the new value changes approved scope, behavior, compatibility, architecture, or release ownership.
+
+If the final repository does not exist yet, ask the project owner to create an empty repository and provide its URL. The repository must have no commits, README, license, or `.gitignore`. Do not create the GitHub repository unless the owner gives a separate explicit instruction and the available tooling supports it.
+
+After values are approved, update `workspace/project.properties` with the resolved operational values before cloning.
 
 ## Resolve Project Identity Defaults
 
@@ -112,6 +141,21 @@ Rules:
 
 Do not continue with placeholder packages, ambiguous generated names, invalid Java identifiers, or example template class names.
 
+## Resolve Public Mod Description
+
+Use the approved public mod description from `workspace/documentation/requirements.md` when available.
+
+If Requirements Definition deferred the description, ask the project owner to approve a minimal public description during this stage.
+
+The description should be:
+
+- One or two short sentences.
+- Accurate to the approved concept and requirements.
+- Suitable for repository metadata and template placeholders.
+- Free of internal workflow, validation, or implementation evidence.
+
+Do not create final README, changelog, CurseForge page copy, or marketing assets during Initialization. Release Presentation owns those outputs.
+
 ## Validate the Template
 
 Inspect the configured template repository and ref.
@@ -131,7 +175,7 @@ When compatibility cannot be established through repository inspection, stop and
 
 ## Validate the Final Repository
 
-The final repository must already exist on GitHub and contain no commits.
+The final repository must already exist on GitHub and contain no commits before cloning.
 
 Confirm that:
 
@@ -443,7 +487,9 @@ Record:
 - Template repository URL
 - Requested template ref
 - Resolved template commit SHA
+- Missing initialization values resolved during this stage
 - Applied defaults and project values
+- Approved public mod description
 - Approved root package and main class
 - Template content removed or preserved
 - License notices
@@ -462,7 +508,7 @@ Stop without committing when:
 
 - The template is incompatible.
 - The final repository is not empty.
-- Required values are missing, ambiguous, invalid, or contradictory.
+- Required values remain missing, ambiguous, invalid, or contradictory after owner review.
 - Template content cannot be copied without Git history.
 - Required license obligations cannot be satisfied.
 - Functional placeholders remain.
@@ -470,4 +516,4 @@ Stop without committing when:
 - The baseline build fails.
 - Repository identity, branch, or remote verification fails.
 
-Report the failure, preserve evidence, and identify the earlier decision or configuration that must change.
+Report the failure, preserve evidence, and identify the earlier decision or configuration that must change only when the failure affects an earlier approved decision.
