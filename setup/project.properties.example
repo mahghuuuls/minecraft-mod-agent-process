@@ -1,26 +1,40 @@
 # Copy this file to workspace/project.properties only after replacing required values.
-# For Initial Development, this file may be deferred until repository identity is known.
+# For Initial Development, this file may be deferred until project identity is known.
 # Existing Mod Assessment and Change Cycle identify the existing repository.
+
+# Repository identity:
+github_username=
+repository_name=
 project_repository_url=
 project_directory_name=
+
+# Mod identity:
+mod_id=
+display_name=
+root_package=
+main_class=
+mod_authors=
+minecraft_username=
 
 # Project platform and distribution decisions:
 mod_loader=
 supported_runtimes=
 distribution_platforms=curseforge
+mod_runtime_role=
 
 # Approved template for Initial Development:
 template_repository_url=
 template_repository_ref=
 
-# Project identity:
-root_package=
-mod_authors=
-minecraft_username=
+# Documentation and collaboration preferences:
+public_documentation_style=player-facing
+commit_message_style=repo-facing-no-workflow-issue-references
 
 # Optional project-specific overrides:
 # preferred_development_java_version=25
 # target_java_version=8
 # project_default_branch=main
+# root_package_pattern=com.{github_owner}.{mod_id}
+# main_class_pattern={PascalCaseDisplayName}Mod
 # use_modern_java_syntax=false
 # license=MIT
