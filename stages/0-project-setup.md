@@ -45,7 +45,7 @@ Establish:
 - Record IntelliJ IDEA availability or installation as a pending prerequisite
 - Create required ignored runtime directories
 - Create or update `workspace/project.properties` when enough real values are known
-- Collect GitHub username, repository name, mod ID, display name, root package, main class, and side/responsibility classification when known
+- Collect GitHub username, repository name, mod ID, display name, public description, root package, main class, and side/responsibility classification when known
 - Apply approved default naming conventions instead of asking the owner to invent Java naming patterns from scratch
 - Record public documentation style and commit-message style
 - Explain the shared platform preferences and available loader/template choices
@@ -69,7 +69,7 @@ Do not:
 - Create commits or push
 - Create a GitHub repository or modify an external service without separate explicit authorization
 - Require a new-mod repository before Concept and Scope begins
-- Block Concept and Scope because the repository name, mod ID, display name, root package, or main class is not final yet
+- Block Concept and Scope because the repository name, mod ID, display name, public description, root package, or main class is not final yet
 - Research upload procedures, publication page setup, or external platform mechanics unless the owner explicitly assigns that work to the agent
 - Write fake placeholder values into machine-readable configuration
 
@@ -99,9 +99,9 @@ Classify exactly one scenario:
 Use when no implementation or approved baseline exists.
 
 - Propose Initial Development.
-- Explain that an empty final GitHub repository is required before Project Initialization, not before Concept and Scope.
+- Explain that an empty final GitHub repository is required during Project Initialization, not before Concept and Scope.
 - Collect repository URL and directory name now only when the owner already has them.
-- Otherwise record them as deferred prerequisites due before Project Initialization.
+- Otherwise record them as deferred values to resolve during Project Initialization before cloning begins.
 
 ### Existing Mod Assessment
 
@@ -150,6 +150,7 @@ Collect or defer:
 - Project directory name, if known
 - Mod ID, if known
 - Display name, if known
+- Short public mod description, if known
 - Preferred root package
 - Preferred main mod class name
 - Public documentation style
@@ -202,7 +203,7 @@ Commit-message style rules:
 - Do not reference workflow issue IDs, internal issue names, stage documents, or process-only context unless the owner explicitly requests that style.
 - Assume a future reader has access to the Git repository but not to the workflow artifacts.
 
-When enough values are approved, write them to `workspace/project.properties`. When values are missing, record them as deferred prerequisites with the stage by which they are required.
+When enough values are approved, write them to `workspace/project.properties`. When repository or identity values are missing, record them as deferred to Project Initialization rather than blocking earlier design stages.
 
 ## Template Guidance
 
@@ -281,6 +282,7 @@ Relevant values may include:
 - `project_directory_name`
 - `mod_id`
 - `display_name`
+- `public_mod_description`
 - `root_package`
 - `main_class`
 - `mod_authors`
@@ -301,7 +303,7 @@ Relevant values may include:
 
 Shared defaults remain in `setup/template-defaults.properties`. Do not edit shared defaults during mod development.
 
-If a new mod's repository or directory name is deferred, do not create an invalid properties file merely to complete the stage. Record the missing values and their deadline in the setup artifact.
+If a new mod's repository, directory name, mod ID, display name, public description, root package, or main class is deferred, do not create an invalid properties file merely to complete the stage. Record the missing values and that Project Initialization must resolve them before cloning.
 
 ## Process
 
@@ -351,7 +353,7 @@ This stage is complete when:
 - The scenario is supported by inspected evidence and owner confirmation.
 - The proposed workflow is explicit.
 - Required-now operational values are configured.
-- Unknown project identity values are either recorded or deferred with explicit deadlines.
+- Unknown repository and project identity values are either recorded or deferred to Project Initialization.
 - Future prerequisites have explicit deadlines.
 - The loader, runtime, template, and distribution decisions are recorded or legitimately deferred/not applicable.
 - The release ownership matrix is recorded and approved.
