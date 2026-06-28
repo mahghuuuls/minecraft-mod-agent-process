@@ -16,7 +16,7 @@ Read:
 setup/template-defaults.properties
 ```
 
-This file defines shared Minecraft, Java, distribution, branch, syntax, and license preferences. Loader, template, and project identity are project-specific.
+This file defines shared Minecraft, Java, distribution, branch, naming, documentation, syntax, and license preferences. Loader, template, and project identity are project-specific.
 
 ### Project Configuration
 
@@ -32,6 +32,7 @@ This ignored file defines the approved repository, loader, runtimes, distributio
 
 Read:
 
+- `workspace/documentation/project-setup.md`
 - `workspace/documentation/concept-and-scope.md`
 - `workspace/documentation/feasibility-research.md`
 - `workspace/documentation/requirements.md`
@@ -52,10 +53,15 @@ supported_runtimes
 distribution_platforms
 template_repository_url
 template_repository_ref
+github_username
+repository_name
 project_repository_url
 project_directory_name
 project_default_branch
+mod_id
+display_name
 root_package
+main_class
 mod_authors
 minecraft_username
 preferred_development_java_version
@@ -64,11 +70,47 @@ use_modern_java_syntax
 license
 ```
 
-Project configuration supplies project-specific values and may override shared preferences. Every required value must be nonempty and consistent with approved documents before cloning.
+Project configuration supplies project-specific values and may override shared preferences. Approved documents may supply values that are not yet written to `workspace/project.properties`.
+
+Every required value must be nonempty and consistent with approved documents before cloning. When a value can be derived from approved defaults, derive it, present it to the project owner, and record the approved value before cloning.
 
 Do not permit an operational override to silently contradict approved project documentation.
 
 Do not log credentials or embed authentication tokens in generated documents.
+
+## Resolve Project Identity Defaults
+
+Before cloning the template or final repository, resolve project identity values needed by the template.
+
+Use approved owner-provided values first. When values are missing and enough source values are approved, propose these defaults:
+
+```text
+root_package = com.<github-owner>.<mod-id>
+main_class = <PascalCaseDisplayName>Mod
+```
+
+Example:
+
+```text
+github_username = mahghuuuls
+mod_id = leftclickvacation
+display_name = Left Click Vacation
+root_package = com.mahghuuuls.leftclickvacation
+main_class = LeftClickVacationMod
+```
+
+Rules:
+
+- Treat these as recommendations, not hard rules.
+- Use an owner-approved override when provided.
+- Normalize GitHub owner and mod ID into valid lowercase Java package segments.
+- Ask before using a non-obvious normalization.
+- Convert display name to PascalCase and append `Mod` for the recommended main class.
+- The generated main class must be a valid Java class identifier.
+- Ask when the display name cannot be converted unambiguously.
+- Record the approved `root_package` and `main_class` in `workspace/project.properties` or in the initialization artifact when the properties file is intentionally not updated.
+
+Do not continue with placeholder packages, ambiguous generated names, invalid Java identifiers, or example template class names.
 
 ## Validate the Template
 
@@ -196,6 +238,10 @@ Map applicable shared preferences to the fetched template's actual structure:
 - Modern Java syntax setting when supported
 - Default license
 - Final project branch
+- Root package pattern when a root package must be derived
+- Main class pattern when a main class must be derived
+- Public documentation style
+- Commit-message style
 
 The template may use different filenames or configuration formats. Inspect and edit the appropriate structured files instead of assuming a particular property name exists.
 
@@ -205,16 +251,17 @@ Preserve unrelated template settings.
 
 Read project-specific values from `workspace/project.properties` and approved documents, including:
 
+- GitHub username or repository owner
+- Repository name
 - Selected loader and supported runtimes
 - Approved distribution platforms
+- Mod ID
+- Mod display name
+- Approved public mod description
 - Root package
+- Main class
 - Author metadata
 - Development username when used
-- Mod display name
-- Mod ID
-- Description
-- Final package
-- Main class
 - Required dependencies
 - Required integrations
 - Client, server, and shared-code constraints
@@ -397,6 +444,7 @@ Record:
 - Requested template ref
 - Resolved template commit SHA
 - Applied defaults and project values
+- Approved root package and main class
 - Template content removed or preserved
 - License notices
 - Publication safety changes
@@ -414,7 +462,7 @@ Stop without committing when:
 
 - The template is incompatible.
 - The final repository is not empty.
-- Required values are missing or contradictory.
+- Required values are missing, ambiguous, invalid, or contradictory.
 - Template content cannot be copied without Git history.
 - Required license obligations cannot be satisfied.
 - Functional placeholders remain.
