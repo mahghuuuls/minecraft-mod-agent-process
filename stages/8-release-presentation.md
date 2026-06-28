@@ -2,22 +2,23 @@
 
 ## Purpose
 
-Prepare and approve the release's user-facing identity, documentation, visual assets, and distribution-platform presentation before technical packaging begins.
+Prepare and approve simple player-facing release materials for the implemented mod before technical packaging begins.
 
-This stage describes only behavior that has been implemented and verified. It does not build or validate the release JAR.
+This stage is about how the mod is presented to players and modpack authors. It does not build, inspect, checksum, or validate the release JAR, and it does not prepare live upload steps.
 
 ## Main Question
 
-> Does the proposed presentation accurately and clearly represent the mod and this release?
+> Do the public materials accurately explain what the mod does and why a player would use it?
 
 ## Required Input
 
+- `workspace/documentation/project-setup.md`, including the release ownership matrix and public documentation style
 - `workspace/documentation/concept-and-scope.md`
 - `workspace/documentation/requirements.md`
 - `<artifact-root>/implementation-plan.md`
 - Completed issues under `<artifact-root>/issues/`
 - The completed project under `workspace/project/<project_directory_name>/`
-- Implementation verification evidence
+- Approved implementation evidence and known limitations
 - Existing approved branding and release materials, when present
 
 Implementation must be approved before this stage begins.
@@ -26,25 +27,24 @@ Implementation must be approved before this stage begins.
 
 Establish:
 
-- The proposed release identity and classification
-- Accurate player-facing documentation
-- An accurate changelog
-- An approved decision to carry forward, revise, or create the mod icon
-- Approved visual assets and screenshots when applicable
-- Accurate project and file text for the approved distribution platforms
-- User-facing compatibility, dependency, and limitation statements
-- An approved presentation record for technical release validation
+- A concise player-facing README or public description suitable for a mod page
+- A concise player-facing changelog
+- A clear feature summary based only on implemented behavior
+- A high-level configuration summary when the mod has user-facing configuration
+- Player-facing multiplayer, client/server, dependency, or compatibility notes when normal players need them
+- Icon and screenshot decisions only when the ownership matrix assigns that work to the agent
+- An internal presentation record that separates public copy from technical evidence and unresolved limitations
 
 ## In Scope
 
-- Propose the release version and channel
-- Create or update `README.md`
-- Create or update `CHANGELOG.md`
-- Decide whether existing branding remains appropriate
-- Create or revise the mod icon when required
-- Prepare approved screenshots or description images
-- Prepare summary, description, categories, dependency information, and file changelog for each approved platform
-- Confirm that every user-facing claim is supported by implementation evidence
+- Create or update `README.md` as player-facing mod-page style copy
+- Create or update `CHANGELOG.md` as player-facing release notes
+- Prepare a CurseForge-style project description or summary text when public copy is agent-managed
+- Summarize implemented features in player language
+- Summarize configuration at a high level when applicable
+- Include player-facing multiplayer or client/server notes when they affect installation or use
+- Record known limitations in public materials only when normal players must know them before installing or using the mod
+- Follow icon or screenshot workflows only when those areas are agent-managed or explicitly assigned
 - Produce `<artifact-root>/release-presentation.md`
 
 ## Out of Scope
@@ -53,123 +53,154 @@ Do not:
 
 - Add or change mod behavior
 - Perform unrelated refactoring
-- Apply unapproved version or metadata changes
 - Build the final release JAR
-- Inspect or test the final release JAR
+- Inspect bytecode or JAR contents
+- Generate checksums
+- Perform release validation or clean-instance testing
+- Include build evidence, bytecode details, validation logs, QA-style usage steps, or internal test reports in the public README
+- Include redundant platform requirements that the distribution platform already displays unless players need the information to decide whether to install
+- Research upload mechanics, live project fields, publication-page setup, or final platform field choices unless explicitly assigned by the owner
+- Prepare screenshots or icon work when those areas are owner-managed
+- Include Cleanroom caveats unless they affect normal player installation, compatibility expectations, or usage decisions
 - Upload assets or files to a distribution platform
 - Publish a release
-- Claim compatibility that was not verified
 
-An implementation defect returns to Implementation. An unresolved product claim returns to the stage that owns the underlying decision.
+An implementation defect returns to Implementation. An inaccurate public claim returns to the stage that owns the underlying behavior or decision.
 
 ## Desired AI Behavior
 
-Act as a release editor and visual-design coordinator.
+Act as a player-facing release editor.
 
-- Use concise, player-facing language.
-- Describe only implemented and verified behavior.
-- Do not present deferred features as available.
-- Keep names, version proposals, compatibility statements, and dependencies consistent.
-- Ask one focused question at a time when release identity or artistic direction requires owner input.
-- Treat existing approved branding as reusable; do not regenerate it automatically.
-- Separate factual accuracy from artistic preference.
-- Present documentation and visual assets for explicit approval.
+- Use concise, plain player-facing language.
+- Assume the public README may be reused as mod-page information.
+- Describe only implemented and approved behavior.
+- Explain why a player would want the mod before listing technical details.
+- Keep configuration and multiplayer notes high-level unless a player must follow a specific rule.
+- Keep internal engineering evidence out of public files.
+- Keep technical evidence, unresolved validation gaps, and ownership decisions in `release-presentation.md`.
+- Follow the release ownership matrix strictly.
+- Ask one focused question at a time when public wording, limitations, or asset ownership needs owner input.
 - Never upload or publish.
 
-## Documentation
+## Public README Guidance
 
-The final project README should contain applicable sections such as:
+When the approved public documentation style is `player-facing`, the README should read like a concise mod-page description.
 
-1. Mod name and summary
-2. Features
-3. Requirements
-4. Installation
-5. Configuration
-6. Usage
-7. Compatibility
-8. Known limitations
-9. Credits
-10. License
-11. Issue reporting
+Include only sections that help normal players or modpack authors, such as:
 
-The changelog should use relevant user-facing categories such as Added, Changed, Fixed, Performance, Compatibility, Removed, and Known Issues.
+1. Mod name and short summary
+2. Why use it
+3. Main features
+4. High-level configuration summary, when applicable
+5. Important player-facing multiplayer, client/server, dependency, or compatibility notes
+6. Known limitations only when they affect installation or use
+7. Credits and license when appropriate for the repository
 
-Exclude internal refactors and development history unless users need the information.
+Avoid public README sections that are primarily internal or redundant, including:
 
-## Icon Decision
+- Build verification
+- Bytecode or artifact evidence
+- QA test procedures
+- Internal validation gaps
+- Implementation details
+- Workflow history
+- Installation tutorials that duplicate platform conventions
+- Redundant requirements already shown by the distribution platform
+- Cleanroom or loader caveats that do not affect normal player decisions
 
-Record one decision:
+If the owner selected `technical` or `both`, keep player-facing copy separate from technical repository documentation where practical.
 
-- **Carry Forward:** Existing approved icon remains accurate, legible, original, and technically suitable.
-- **Revise:** Existing visual identity remains valid but the asset needs a focused change.
-- **Create:** No approved suitable icon exists.
+## Changelog Guidance
 
-When the decision is **Revise** or **Create**, follow:
+The changelog should summarize player-visible changes.
+
+Use concise categories such as:
+
+- Added
+- Changed
+- Fixed
+- Compatibility
+- Known Issues
+
+Exclude internal refactors, implementation history, and workflow details unless they affect users.
+
+## Icon And Screenshot Ownership
+
+Use the release ownership matrix from Project Setup.
+
+Default behavior:
+
+- Icon is owner-managed.
+- Screenshots are owner-managed.
+
+If icon work is owner-managed:
+
+- Do not research, generate, select, or request icon references.
+- Record that the owner manages the icon.
+
+If screenshot work is owner-managed:
+
+- Do not plan, request, capture, select, or prepare screenshots.
+- Record that the owner manages screenshots.
+
+If the owner explicitly assigns icon creation or revision to the agent, record one decision and follow:
 
 ```text
 guidelines/mod-icon-creation.md
 ```
 
-The AI must create the artwork workspace and explicitly ask the project owner to add reference images there or attach them in chat. Do not assume the owner has read repository documentation.
+Allowed icon decisions:
 
-When the decision is **Carry Forward**, do not request references or generate alternatives.
+- **Owner Provides:** Owner supplies or selects the icon outside the agent workflow.
+- **Deferred:** Icon is intentionally postponed.
+- **Carry Forward:** Existing approved icon remains suitable.
+- **Revise:** Existing visual identity remains valid but needs a focused change.
+- **Create:** No approved suitable icon exists and the agent is assigned to help create it.
 
-## Visual Assets
+When icon work is **Revise** or **Create**, create the artwork workspace and explicitly ask the owner to add reference images there or attach them in chat. Do not assume the owner has read repository documentation.
 
-Approved assets must:
+If screenshots are explicitly assigned to the agent, screenshots must show actual implemented behavior. Do not substitute generated imagery for gameplay or UI evidence.
 
-- Represent the mod accurately
-- Remain recognizable at their displayed sizes
-- Use original or properly licensed material
-- Avoid Minecraft, a distribution platform, another project, or another creator's branding as the primary artwork
-- Meet current destination requirements
-- Be approved by the project owner
+## Internal Presentation Record
 
-Screenshots should show actual implemented behavior. Do not substitute generated imagery for evidence of gameplay or UI behavior.
+`release-presentation.md` may include technical notes that should not appear in public README copy.
 
-## Distribution-Platform Presentation
+Use it to record:
 
-Prepare, but do not publish:
+- Source implementation evidence supporting public claims
+- Ownership decisions for README, changelog, icon, screenshots, upload, publication, and validation
+- Known limitations and whether they are public-facing or internal
+- Deferred owner-managed assets or publication actions
+- Questions that Packaging and Release Validation must consider
 
-- Project name
-- Summary
-- Description
-- Categories
-- Supported Minecraft, loader, runtime, and environment information
-- Required and optional dependencies
-- License, source, and issue links
-- Project icon and approved images
-- Proposed file display name and release channel
-- File changelog
-- Known limitations
-
-Verify current distribution-platform presentation and asset requirements during this stage.
+Do not use the internal record as public copy.
 
 ## Process
 
 1. Confirm that Implementation is approved.
-2. Review completed issues, verification evidence, and known limitations.
-3. Propose the release identity and channel.
-4. Update README and changelog drafts.
-5. Decide whether branding is carried forward, revised, or created.
-6. Run the icon guide only when revision or creation is approved.
-7. Prepare screenshots and additional images when applicable.
-8. Prepare project and file text for the approved distribution platforms.
-9. Cross-check every claim against requirements and implementation evidence.
-10. Produce the presentation record.
-11. Present the complete documentation, assets, and listing material for approval.
-12. Revise until explicitly approved.
+2. Read the release ownership matrix and public documentation style from Project Setup.
+3. Review completed issues, approved behavior, and known limitations.
+4. Identify which public materials are agent-managed.
+5. Draft or update player-facing README content when agent-managed.
+6. Draft or update player-facing changelog content when agent-managed.
+7. Prepare a CurseForge-style summary or description only as reusable public copy, not as upload-field research.
+8. Add high-level configuration and player-facing multiplayer/client/server notes when applicable.
+9. Follow icon or screenshot workflows only when those areas are agent-managed or explicitly assigned.
+10. Check every public claim against approved implementation evidence.
+11. Keep technical evidence and internal limitations in `release-presentation.md` rather than public README copy.
+12. Present public materials and the internal presentation record for approval.
+13. Revise until explicitly approved.
 
 ## Output Artifacts
 
 ### Final Project Repository
 
-Prepare applicable user-facing files and assets:
+Prepare only applicable public-facing files and agent-managed assets:
 
 - `README.md`
 - `CHANGELOG.md`
-- Approved mod icon
-- Approved screenshots or description images stored in the repository only when appropriate
+- Approved mod icon, only when agent-managed or explicitly assigned
+- Approved screenshots or description images, only when agent-managed or explicitly assigned
 
 ### Presentation Record
 
@@ -181,27 +212,33 @@ Produce:
 
 It should contain:
 
-1. Proposed release version and channel
-2. README and changelog status
-3. Branding decision
-4. Approved icon and asset paths
-5. Reference-source record when artwork was created or revised
-6. Prepared distribution-platform presentation
-7. User-facing compatibility and dependency claims
-8. Known limitations
-9. Owner approvals
+1. Public documentation style
+2. Release ownership matrix summary
+3. README status and intended audience
+4. Changelog status
+5. Reusable public description or summary text
+6. Feature summary
+7. Configuration summary, when applicable
+8. Player-facing multiplayer, client/server, dependency, or compatibility notes
+9. Icon decision and ownership status
+10. Screenshot decision and ownership status
+11. Public-facing known limitations
+12. Internal technical notes and validation gaps excluded from public copy
+13. Claims checked against implementation evidence
+14. Owner approvals
 
 ## Completion Criteria
 
 This stage is complete when:
 
-- The release identity and channel are approved.
-- README and changelog accurately describe the implemented mod.
-- The branding decision is recorded.
-- Required visual assets are approved and technically suitable.
-- distribution-platform presentation material is complete.
-- Every user-facing claim is supported by evidence.
-- No unresolved presentation defect remains.
+- Public README or description copy is concise, player-facing, and approved.
+- Changelog is concise, player-facing, and approved.
+- Feature, configuration, and multiplayer/client/server notes match implemented behavior.
+- Owner-managed icon, screenshot, upload, and publication responsibilities are respected.
+- Agent-managed icon or screenshot work, if any, is approved.
+- Public materials do not include build evidence, bytecode details, QA-style usage steps, internal validation findings, redundant platform requirements, upload mechanics, or irrelevant Cleanroom caveats.
+- Technical notes are kept in `release-presentation.md`, not public README copy.
+- Every public claim is supported by approved implementation evidence.
 - `<artifact-root>/release-presentation.md` is generated and approved.
 
 Completion authorizes Packaging and Release Validation. It does not authorize publication.
