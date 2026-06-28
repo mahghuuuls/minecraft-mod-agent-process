@@ -2,7 +2,7 @@
 
 These defaults apply to every mod unless an approved project-specific decision overrides them.
 
-`setup/template-defaults.properties` is the authoritative source for machine-readable shared preferences. Project identity, loader, compatible runtimes, distribution targets, and template selection belong in `workspace/project.properties` and approved project documents.
+`setup/template-defaults.properties` is the authoritative source for machine-readable shared preferences. Project identity, loader, compatible runtimes, distribution targets, release ownership, and template selection belong in `workspace/project.properties` and approved project documents.
 
 ## Fixed Scope
 
@@ -74,6 +74,25 @@ Do not leave example values in initialized project files.
 - Commit messages should describe the repository change itself.
 - Do not reference workflow issue IDs, internal issue names, stage documents, or process-only context unless the owner explicitly requests that style.
 - Assume a future reader has access to the Git repository but not to the workflow artifacts.
+
+## Release Ownership
+
+Project Setup records a release ownership matrix. Defaults are:
+
+- README: agent-managed
+- Changelog: agent-managed
+- Icon: owner-managed
+- Screenshots: owner-managed
+- CurseForge upload: owner-managed
+- Release JAR generation: agent-managed
+- Final publication verification: agent-managed for local handoff information only
+- Dedicated server testing: owner-managed
+- Cleanroom testing: owner-managed
+- External multiplayer testing: owner-managed
+
+Default release handoff mode is `agent-managed-release-validation`. A project may use `owner-managed-packaging` when the owner wants the agent to prepare only a lightweight handoff.
+
+Owner-managed validation checks should be recorded as accepted limitations when skipped. Follow the validation waiver rules in `guidelines/process-control.md`.
 
 ## Licensing and Attribution
 
