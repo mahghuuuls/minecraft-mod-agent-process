@@ -18,6 +18,7 @@ Convert the approved concept into precise, observable, and testable behavior wit
 
 Establish:
 
+- A short public-facing mod description for early project identity
 - What triggers each feature
 - What behavior each feature produces
 - Conditions under which the behavior applies
@@ -33,6 +34,7 @@ Establish:
 
 ## In Scope
 
+- Minimal public mod description for repository metadata and initialization
 - Functional requirements
 - Observable behavior
 - Feature rules and interactions
@@ -64,7 +66,7 @@ Do not attempt to define:
 - Implementation tasks or ordering
 - Test implementation details
 - Production code
-- Release documentation or assets
+- Final release copy, mod-page copy, or marketing assets
 
 Requirements describe externally meaningful behavior and constraints, not the internal solution.
 
@@ -74,6 +76,9 @@ Act as a requirements analyst.
 
 - Derive candidate requirements from the approved Concept and Scope.
 - Respect constraints and limitations discovered during Feasibility Research.
+- Create a short public-facing mod description before finalizing requirements.
+- Keep the public description concise, accurate, and suitable for early repository metadata.
+- Do not treat the public description as final release README or platform-page copy.
 - Interview the project owner one focused question at a time.
 - Examine each feature through its triggers, conditions, outcomes, boundaries, and exceptions.
 - Challenge vague terms such as "nearby," "fast," "compatible," or "automatically."
@@ -92,6 +97,20 @@ Act as a requirements analyst.
 - Produce the final document only after explicit approval.
 
 Focus questioning on meaningful behavior and risk. Do not exhaustively enumerate hypothetical edge cases without a plausible effect on the project.
+
+## Public Mod Description
+
+Define a minimal public-facing description that can be reused during Project Initialization for repository metadata, template placeholders, or early project identity.
+
+The description should be:
+
+- One or two short sentences.
+- Understandable to a player or modpack author.
+- Accurate to the approved concept and requirements.
+- Stable enough for initialization, but not treated as final release copy.
+- Free of internal implementation, workflow, testing, or validation details.
+
+Use this description only as early identity text. Release Presentation owns final README, changelog, and platform-facing copy.
 
 ## Requirement Quality
 
@@ -143,18 +162,19 @@ Notes should not prescribe implementation unless the detail is an established pr
 
 1. Read all required input documents.
 2. Extract every approved high-level feature.
-3. Identify the actors, triggers, states, and outcomes associated with each feature.
-4. Interview the project owner one question at a time.
-5. Resolve behavioral ambiguities and contradictions.
-6. Define rules, limits, exceptions, and failure behavior.
-7. Define configuration, multiplayer, persistence, and compatibility behavior where relevant.
-8. Convert agreed behavior into atomic requirements.
-9. Assign stable identifiers and priorities.
-10. Add objective acceptance criteria.
-11. Check every requirement for clarity, consistency, feasibility, and testability.
-12. Trace requirements back to approved features.
-13. Generate `workspace/documentation/requirements.md` as a complete draft.
-14. Present the draft for review and revise it until explicitly approved.
+3. Draft the minimal public-facing mod description.
+4. Identify the actors, triggers, states, and outcomes associated with each feature.
+5. Interview the project owner one question at a time.
+6. Resolve behavioral ambiguities and contradictions.
+7. Define rules, limits, exceptions, and failure behavior.
+8. Define configuration, multiplayer, persistence, and compatibility behavior where relevant.
+9. Convert agreed behavior into atomic requirements.
+10. Assign stable identifiers and priorities.
+11. Add objective acceptance criteria.
+12. Check every requirement for clarity, consistency, feasibility, and testability.
+13. Trace requirements back to approved features.
+14. Generate `workspace/documentation/requirements.md` as a complete draft.
+15. Present the draft for review and revise it until explicitly approved.
 
 ## Output Artifact
 
@@ -162,20 +182,21 @@ Produce a Markdown document named `workspace/documentation/requirements.md` cont
 
 1. **Purpose and Scope**
 2. **Referenced Documents**
-3. **Actors and Usage Context**
-4. **Terminology**
-5. **Functional Requirements**
-6. **Configuration Requirements**
-7. **Client and Server Requirements**
-8. **Multiplayer Requirements**
-9. **Persistence Requirements**
-10. **Compatibility Requirements**
-11. **Performance Requirements**
-12. **Failure and Error Requirements**
-13. **Out-of-Scope Behavior**
-14. **Assumptions and Dependencies**
-15. **Requirement Traceability**
-16. **Unresolved Non-Blocking Questions**
+3. **Public Mod Description**
+4. **Actors and Usage Context**
+5. **Terminology**
+6. **Functional Requirements**
+7. **Configuration Requirements**
+8. **Client and Server Requirements**
+9. **Multiplayer Requirements**
+10. **Persistence Requirements**
+11. **Compatibility Requirements**
+12. **Performance Requirements**
+13. **Failure and Error Requirements**
+14. **Out-of-Scope Behavior**
+15. **Assumptions and Dependencies**
+16. **Requirement Traceability**
+17. **Unresolved Non-Blocking Questions**
 
 Omit categories that do not apply rather than inventing requirements.
 
@@ -183,6 +204,7 @@ Omit categories that do not apply rather than inventing requirements.
 
 This stage is complete when:
 
+- The public mod description is approved and suitable for early project metadata.
 - Every approved high-level feature is represented by requirements.
 - Every requirement has a stable identifier and priority.
 - Required behavior is precise and observable.
