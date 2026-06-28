@@ -30,6 +30,7 @@ Establish:
 - The project repository state or the stage by which it must exist
 - A provisional loader, compatible-runtime, and template choice for Initial Development
 - Approved distribution platforms and known operational overrides
+- Release-related ownership boundaries for the project owner and agent
 - Deferred prerequisites and their deadlines
 - A clear starting point requiring no README knowledge
 
@@ -45,6 +46,7 @@ Establish:
 - Research loader and template candidates when requested or unresolved
 - Record provisional loader, runtime, and template candidates or defer final validation to Feasibility Research
 - Explain repository requirements for the selected scenario
+- Collect and approve the release ownership matrix
 - Propose the applicable workflow
 - Produce `workspace/documentation/project-setup.md`
 
@@ -61,6 +63,7 @@ Do not:
 - Create commits or push
 - Create a GitHub repository or modify an external service without separate explicit authorization
 - Require a new-mod repository before Concept and Scope begins
+- Research upload procedures, publication page setup, or external platform mechanics unless the owner explicitly assigns that work to the agent
 - Write fake placeholder values into machine-readable configuration
 
 ## Desired AI Behavior
@@ -76,6 +79,7 @@ Act as an onboarding coordinator.
 - Explain trade-offs when presenting template candidates.
 - Record uncertainty instead of guessing.
 - Preserve existing repositories and unrelated workspace content.
+- Treat owner-managed responsibilities as hard boundaries unless the owner explicitly changes them.
 - Present the setup result and proposed workflow for explicit approval.
 
 ## Scenario Classification
@@ -155,6 +159,36 @@ Template choice remains provisional until Feasibility Research validates it. Do 
 
 Existing Mod Assessment and Change Cycle begin from the existing loader and build system, but Stage 0 must still record supported runtimes and intended distribution platforms.
 
+## Release Ownership Matrix
+
+Collect an ownership matrix before approving Project Setup. This matrix defines which release-related responsibilities are agent-managed, owner-managed, shared, or deferred.
+
+Use these owner values:
+
+- **Agent:** The agent may perform the work within the approved workflow.
+- **Owner:** The project owner performs the work. The agent may record the decision and provide only specifically requested help.
+- **Shared:** The agent prepares material, but the owner performs final selection, execution, or external action.
+- **Deferred:** The responsibility is intentionally postponed. Record the stage or condition that will revisit it.
+
+Start from these defaults unless the owner changes them:
+
+| Area | Default Owner | Default Notes |
+| --- | --- | --- |
+| README | Agent | Prepare player-facing public copy unless another documentation style is approved. |
+| Changelog | Agent | Prepare concise player-facing release notes from approved changes. |
+| Icon | Owner | Do not research, generate, or select an icon unless the owner explicitly assigns icon work to the agent. |
+| Screenshots | Agent | Prepare screenshot guidance, captions, or checklist when useful; owner may still capture final screenshots. |
+| CurseForge upload | Owner | Do not research upload mechanics, publication page setup, or final platform field choices unless explicitly assigned. |
+| Release JAR generation | Agent | Generate or identify the normal release artifact only when later stages keep this agent-managed. |
+| Final publication verification | Agent | Verify approved local handoff information by default; external publication checks require owner-provided context or explicit approval. |
+| Dedicated server testing | Owner | Do not attempt, research, or repeatedly request dedicated server validation unless explicitly assigned. |
+| Cleanroom testing | Agent | Validate or record limitations when the approved runtime target requires it and the environment supports it. |
+| External multiplayer testing | Owner | Do not attempt, research, or repeatedly request external multiplayer validation unless explicitly assigned. |
+
+When asking about the matrix, present the defaults first and ask what the owner wants to override. Do not ask every row as a separate question unless the owner wants detailed control.
+
+Record the approved matrix in `workspace/documentation/project-setup.md`. Later stages must follow it. If a later stage needs to perform owner-managed work, stop and ask the owner to revise the matrix or approve a one-time exception.
+
 ## Project Configuration
 
 Use:
@@ -195,11 +229,12 @@ If a new mod's repository or directory name is deferred, do not create an invali
 4. Inspect available environment tools and repositories.
 5. Resolve known repository configuration.
 6. Resolve or provisionally defer loader, runtime, template, and distribution selections.
-7. Write only approved known operational values.
-8. Record deferred prerequisites and the stage by which each is required.
-9. Propose the applicable workflow.
-10. Produce the setup artifact.
-11. Present the artifact and workflow selection for separate explicit approval.
+7. Present the release ownership defaults and collect approved overrides.
+8. Write only approved known operational values.
+9. Record deferred prerequisites and the stage by which each is required.
+10. Propose the applicable workflow.
+11. Produce the setup artifact.
+12. Present the artifact and workflow selection for separate explicit approval.
 
 ## Output Artifact
 
@@ -218,9 +253,10 @@ It should contain:
 5. Repository state
 6. Configuration written
 7. Provisional loader, runtime, template, and distribution decisions with evidence
-8. Deferred prerequisites and deadlines
-9. Blocking problems
-10. Owner approvals
+8. Release ownership matrix
+9. Deferred prerequisites and deadlines
+10. Blocking problems
+11. Owner approvals
 
 Do not include credentials or secrets.
 
@@ -233,6 +269,7 @@ This stage is complete when:
 - Required-now operational values are configured.
 - Future prerequisites have explicit deadlines.
 - The loader, runtime, template, and distribution decisions are recorded or legitimately deferred/not applicable.
+- The release ownership matrix is recorded and approved.
 - No unresolved blocker prevents the selected workflow's first stage.
 - `project-setup.md` is approved.
 - The project owner separately approves the proposed workflow.
