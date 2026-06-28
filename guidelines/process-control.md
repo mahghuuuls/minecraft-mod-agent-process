@@ -108,6 +108,38 @@ For resumed work, provide a shorter briefing that states the active stage, curre
 
 Do not assume the owner remembers what a numbered stage means. Use the stage's plain-language name and practical purpose whenever transitioning.
 
+## Validation Waivers
+
+Validation checks must be explicit, but they must not be forced repeatedly after the project owner declines or marks them owner-managed.
+
+When a validation check is skipped by owner decision, record it as an accepted limitation rather than treating it as a continuing blocker.
+
+Use this format:
+
+```text
+Accepted limitation: <Validation name> was not performed by owner decision.
+```
+
+Examples:
+
+```text
+Accepted limitation: Dedicated server testing was not performed by owner decision.
+Accepted limitation: Cleanroom testing was not performed by owner decision.
+Accepted limitation: External multiplayer testing was not performed by owner decision.
+Accepted limitation: Clean launcher testing was not performed by owner decision.
+```
+
+A validation waiver is valid only when:
+
+- The check is owner-managed, explicitly declined, infeasible in the current environment, or intentionally deferred.
+- The consequence is recorded where the stage keeps evidence.
+- Any public-facing claim affected by the skipped validation is removed, softened, or marked as unverified.
+- The project owner explicitly accepts the limitation.
+
+After a waiver is accepted, later stages may reference it but should not repeatedly ask to perform the same check unless new evidence makes it release-blocking or the owner reopens it.
+
+Do not use a waiver to hide a known defect, contradiction, failed check, or unverified claim that the public materials still rely on.
+
 ## Approval Lifecycle
 
 Apply this lifecycle to stages and workflow-specific approval checkpoints:
