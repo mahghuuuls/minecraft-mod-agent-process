@@ -28,6 +28,9 @@ Establish:
 - The proposed workflow
 - The current tool and workspace state
 - The project repository state or the stage by which it must exist
+- Practical project identity defaults, when known
+- Public documentation style and commit-message style
+- Client/server responsibility: client-only, client-first, or server-required
 - A provisional loader, compatible-runtime, and template choice for Initial Development
 - Approved distribution platforms and known operational overrides
 - Release-related ownership boundaries for the project owner and agent
@@ -42,6 +45,9 @@ Establish:
 - Record IntelliJ IDEA availability or installation as a pending prerequisite
 - Create required ignored runtime directories
 - Create or update `workspace/project.properties` when enough real values are known
+- Collect GitHub username, repository name, mod ID, display name, root package, main class, and side/responsibility classification when known
+- Apply approved default naming conventions instead of asking the owner to invent Java naming patterns from scratch
+- Record public documentation style and commit-message style
 - Explain the shared platform preferences and available loader/template choices
 - Research loader and template candidates when requested or unresolved
 - Record provisional loader, runtime, and template candidates or defer final validation to Feasibility Research
@@ -63,6 +69,7 @@ Do not:
 - Create commits or push
 - Create a GitHub repository or modify an external service without separate explicit authorization
 - Require a new-mod repository before Concept and Scope begins
+- Block Concept and Scope because the repository name, mod ID, display name, root package, or main class is not final yet
 - Research upload procedures, publication page setup, or external platform mechanics unless the owner explicitly assigns that work to the agent
 - Write fake placeholder values into machine-readable configuration
 
@@ -76,6 +83,7 @@ Act as an onboarding coordinator.
 - Ask one focused question at a time.
 - Distinguish required-now values from prerequisites that may be deferred.
 - Offer the configured default before researching alternatives.
+- Propose conventional naming defaults and ask only when required values are missing, ambiguous, or overridden.
 - Explain trade-offs when presenting template candidates.
 - Record uncertainty instead of guessing.
 - Preserve existing repositories and unrelated workspace content.
@@ -129,6 +137,72 @@ Inspect and record:
 Project defaults define the intended environment. Missing tools may be installed later when they are not needed by the first stage, but record the stage by which each is required.
 
 Do not install software without explicit authorization.
+
+## Practical Project Defaults
+
+Collect practical defaults early when the owner knows them, but do not block the first design stages when a new mod is still unnamed.
+
+Collect or defer:
+
+- GitHub username or repository owner
+- Repository name, if known
+- Final repository URL, if known
+- Project directory name, if known
+- Mod ID, if known
+- Display name, if known
+- Preferred root package
+- Preferred main mod class name
+- Public documentation style
+- Client/server responsibility
+- Preferred commit-message style
+
+Use these defaults unless the owner overrides them:
+
+| Decision | Default |
+| --- | --- |
+| Root package | `com.<github-owner>.<mod-id>` |
+| Main mod class | `<PascalCaseDisplayName>Mod` |
+| Public documentation style | `player-facing` |
+| Commit-message style | `repo-facing-no-workflow-issue-references` |
+
+Root package rules:
+
+- Use the GitHub owner and mod ID to propose `com.<github-owner>.<mod-id>`.
+- Normalize package segments to valid lowercase Java identifiers.
+- Ask before using a non-obvious normalization.
+- Treat the proposed package as a recommendation, not a hard rule.
+- Use an owner-approved override when provided.
+
+Main class rules:
+
+- Convert the display name to PascalCase and append `Mod`.
+- The generated name must be a valid Java class identifier.
+- Ask when the display name cannot be converted unambiguously.
+- Treat the proposed class name as a recommendation, not a hard rule.
+- Use an owner-approved override when provided.
+
+Public documentation style rules:
+
+- Default to `player-facing`.
+- For `player-facing`, the public README should read like mod-page information: what the mod does, why a player would want it, main features, high-level configuration, and important player-facing compatibility or multiplayer notes.
+- Do not put internal workflow details, implementation evidence, validation logs, or QA-style test reports in the public README unless the owner explicitly selects a technical style or the detail affects normal player decisions.
+- Use `technical` only when the owner wants repository-oriented developer documentation.
+- Use `both` only when the owner wants separate player-facing and technical sections or files.
+
+Client/server responsibility values:
+
+- `client-only`: functionality belongs only on the client.
+- `client-first`: primary value is client-side, but compatibility or multiplayer behavior may need documentation or limited checks.
+- `server-required`: the mod must be installed or enforced on a server for core behavior.
+
+Commit-message style rules:
+
+- Default to repo-facing messages.
+- Commit messages should describe the repository change itself.
+- Do not reference workflow issue IDs, internal issue names, stage documents, or process-only context unless the owner explicitly requests that style.
+- Assume a future reader has access to the Git repository but not to the workflow artifacts.
+
+When enough values are approved, write them to `workspace/project.properties`. When values are missing, record them as deferred prerequisites with the stage by which they are required.
 
 ## Template Guidance
 
@@ -201,16 +275,24 @@ Only write values that are known and approved.
 
 Relevant values may include:
 
+- `github_username`
+- `repository_name`
 - `project_repository_url`
 - `project_directory_name`
+- `mod_id`
+- `display_name`
+- `root_package`
+- `main_class`
+- `mod_authors`
+- `minecraft_username`
 - `mod_loader`
 - `supported_runtimes`
 - `distribution_platforms`
+- `mod_runtime_role`
 - `template_repository_url`
 - `template_repository_ref`
-- `root_package`
-- `mod_authors`
-- `minecraft_username`
+- `public_documentation_style`
+- `commit_message_style`
 - `preferred_development_java_version`
 - `target_java_version`
 - `project_default_branch`
@@ -227,14 +309,15 @@ If a new mod's repository or directory name is deferred, do not create an invali
 2. Explain that setup can be completed interactively.
 3. Identify the scenario.
 4. Inspect available environment tools and repositories.
-5. Resolve known repository configuration.
-6. Resolve or provisionally defer loader, runtime, template, and distribution selections.
-7. Present the release ownership defaults and collect approved overrides.
-8. Write only approved known operational values.
-9. Record deferred prerequisites and the stage by which each is required.
-10. Propose the applicable workflow.
-11. Produce the setup artifact.
-12. Present the artifact and workflow selection for separate explicit approval.
+5. Resolve known repository configuration without requiring a final new-mod repository before Concept and Scope.
+6. Collect or defer practical project defaults.
+7. Resolve or provisionally defer loader, runtime, template, and distribution selections.
+8. Present the release ownership defaults and collect approved overrides.
+9. Write only approved known operational values.
+10. Record deferred prerequisites and the stage by which each is required.
+11. Propose the applicable workflow.
+12. Produce the setup artifact.
+13. Present the artifact and workflow selection for separate explicit approval.
 
 ## Output Artifact
 
@@ -251,12 +334,13 @@ It should contain:
 3. Proposed workflow
 4. Environment inspection
 5. Repository state
-6. Configuration written
-7. Provisional loader, runtime, template, and distribution decisions with evidence
-8. Release ownership matrix
-9. Deferred prerequisites and deadlines
-10. Blocking problems
-11. Owner approvals
+6. Practical project defaults, including known values and deferred values
+7. Configuration written
+8. Provisional loader, runtime, template, and distribution decisions with evidence
+9. Release ownership matrix
+10. Deferred prerequisites and deadlines
+11. Blocking problems
+12. Owner approvals
 
 Do not include credentials or secrets.
 
@@ -267,6 +351,7 @@ This stage is complete when:
 - The scenario is supported by inspected evidence and owner confirmation.
 - The proposed workflow is explicit.
 - Required-now operational values are configured.
+- Unknown project identity values are either recorded or deferred with explicit deadlines.
 - Future prerequisites have explicit deadlines.
 - The loader, runtime, template, and distribution decisions are recorded or legitimately deferred/not applicable.
 - The release ownership matrix is recorded and approved.
