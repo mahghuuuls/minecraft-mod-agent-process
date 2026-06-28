@@ -1,6 +1,6 @@
 # Process Control
 
-This file is the authoritative source for workflow and stage status, approvals, artifact locations, and backward transitions.
+This file is the authoritative source for workflow and stage status, approvals, artifact locations, workflow feedback, and backward transitions.
 
 ## Project Setup
 
@@ -139,6 +139,53 @@ A validation waiver is valid only when:
 After a waiver is accepted, later stages may reference it but should not repeatedly ask to perform the same check unless new evidence makes it release-blocking or the owner reopens it.
 
 Do not use a waiver to hide a known defect, contradiction, failed check, or unverified claim that the public materials still rely on.
+
+## Workflow Feedback Log
+
+Maintain a project-specific feedback log at:
+
+```text
+workspace/documentation/workflow-feedback.md
+```
+
+Create it from:
+
+```text
+setup/workflow-feedback-template.md
+```
+
+Use this log to record friction, corrections, and improvement ideas discovered while using the workflow on a specific mod. The objective is to give the project owner a concise artifact they can later share during process-maintenance work.
+
+Record an entry when an interaction suggests that the workflow may need improvement, for example:
+
+- The owner corrects a repeated agent assumption.
+- A stage asks for information too early or too late.
+- A default is wrong, unclear, too strict, or too loose.
+- A document is redundant, missing, confusing, or too detailed.
+- A stage pushes work that should be owner-managed.
+- A validation, release, setup, or documentation step creates avoidable friction.
+- The agent had to invent an exception that should become explicit workflow guidance.
+
+Do not interrupt the active stage just to update this log unless the issue is blocking. Prefer updating it at natural checkpoints, such as after a correction, before stage approval, after an issue completes, or at the end of the session.
+
+Entries are observations, not approved process changes. Do not modify versioned workflow files during mod development unless the user explicitly switches to Process Maintenance mode.
+
+Each entry should include:
+
+- Stable feedback ID
+- Date
+- Workflow and stage
+- Status
+- Severity
+- Category
+- Trigger
+- Observed problem
+- Suggested change
+- Affected files or areas, if known
+- Evidence or example, if useful
+- Owner notes, if any
+
+Review this log when starting Process Maintenance work or when the owner asks to improve the workflow after finishing a mod.
 
 ## Approval Lifecycle
 
