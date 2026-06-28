@@ -10,6 +10,14 @@ Determine the requested mode before changing files.
 
 Use this mode when the user asks to change this process repository. Work only in the outer repository unless instructed otherwise. Do not modify a nested mod repository.
 
+When improving the process after a real mod project, inspect any provided or existing workflow feedback log before proposing changes:
+
+```text
+workspace/documentation/workflow-feedback.md
+```
+
+Treat feedback entries as evidence and prompts for review, not as automatically approved process changes.
+
 ### Mod Development
 
 Use this mode when working on a specific mod:
@@ -17,6 +25,7 @@ Use this mode when working on a specific mod:
 - Treat versioned process instructions and setup files as read-only.
 - Use ignored runtime paths under `workspace/` for project configuration, documentation, artwork, templates, and the active mod.
 - Follow the shared guidelines, approved setup, selected workflow, and active stage.
+- Record workflow friction, corrections, and improvement ideas in `workspace/documentation/workflow-feedback.md` when they arise.
 - Modify mod source only in the active repository under `workspace/project/`.
 - Treat `workspace/template/` as disposable source material.
 
@@ -70,29 +79,31 @@ For mod-development work, read in this order:
 1. `AGENTS.md`
 2. The core guideline files listed under **Instruction Ownership**
 3. `workspace/documentation/project-status.md`, when present
-4. `stages/0-project-setup.md` and its artifact when setup is required
-5. The selected file under `workflows/`
-6. The active stage under `stages/`, when the workflow invokes one
-7. Any specialized guideline explicitly referenced by the active workflow or stage
-8. The approved artifacts referenced by the workflow or stage
-9. The relevant implementation issue and source code, when applicable
+4. `workspace/documentation/workflow-feedback.md`, when present
+5. `stages/0-project-setup.md` and its artifact when setup is required
+6. The selected file under `workflows/`
+7. The active stage under `stages/`, when the workflow invokes one
+8. Any specialized guideline explicitly referenced by the active workflow or stage
+9. The approved artifacts referenced by the workflow or stage
+10. The relevant implementation issue and source code, when applicable
 
 Do not silently resolve contradictions between sources. Follow `guidelines/process-control.md`.
 
 ## Instruction Ownership
 
 - `guidelines/project-defaults.md`: stable defaults for every mod.
-- `guidelines/process-control.md`: setup, workflow and stage status, approval, artifacts, and backward transitions.
-- `guidelines/collaboration-guidelines.md`: communication, editing, Git authorization, and completion reporting.
+- `guidelines/process-control.md`: setup, workflow and stage status, approval, artifacts, workflow feedback, and backward transitions.
+- `guidelines/collaboration-guidelines.md`: communication, editing, Git authorization, workflow feedback behavior, and completion reporting.
 - `guidelines/coding-standards.md`: implementation and verification conventions.
 - Specialized guideline files under `guidelines/`: task-specific instructions read only when referenced.
 - `workflows/*.md`: scenario-specific routing and behavior.
 - `setup/manual-workspace-setup.md`: optional human-operated workspace configuration.
 - `setup/initialize-project.md`: new-repository initialization procedure used later.
+- `setup/workflow-feedback-template.md`: template for the project-specific feedback log.
 - `stages/*.md`: setup and reusable development-stage responsibilities.
 
 When instructions overlap, the file that owns the subject is authoritative. Other files should reference it instead of restating it.
 
 ## Execution
 
-Complete or carry forward Project Setup, then resume or obtain approval for the applicable workflow. Follow one checkpoint or stage at a time, update `project-status.md`, and stop whenever owner approval is required. Never advance automatically.
+Complete or carry forward Project Setup, then resume or obtain approval for the applicable workflow. Follow one checkpoint or stage at a time, update `project-status.md`, record workflow feedback when relevant, and stop whenever owner approval is required. Never advance automatically.
