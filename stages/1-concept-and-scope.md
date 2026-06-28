@@ -11,6 +11,7 @@ Establish a shared understanding of what the mod should accomplish and where its
 ## Required Input
 
 - The initial mod idea or problem statement
+- Any rough design notes supplied by the project owner
 - Any examples or references supplied by the project owner
 
 ## Objectives
@@ -60,7 +61,10 @@ Identify obvious contradictions, but record technical concerns for Feasibility R
 
 Act as an alignment interviewer.
 
-- Ask one focused question at a time.
+- Before the interview starts, ask the project owner to describe the mod as fully as they can.
+- For complex mods, recommend writing a rough design note first.
+- Treat the owner's first draft as raw input, not as final requirements or approved scope.
+- Ask one focused question at a time after receiving the first draft.
 - Begin with the problem and intended experience.
 - Use each answer to determine the next relevant question.
 - Challenge vague language, hidden assumptions, contradictions, and feature creep.
@@ -77,17 +81,34 @@ Act as an alignment interviewer.
 
 Focus the interview on decisions that could materially change the project's identity or scope. Do not attempt to explore every detailed behavioral edge case.
 
+## Initial Draft Intake
+
+Start by asking the project owner for a rough first draft of the mod idea.
+
+Ask for as much detail as they already know, such as:
+
+- What problem, annoyance, fantasy, or player experience motivated the mod
+- What the mod should do at a high level
+- What the player should notice while using it
+- Any examples from other mods, games, or manual workflows
+- Any known boundaries, exclusions, or strong preferences
+
+For small mods, a paragraph may be enough. For complex mods, recommend a rough design note before the interview continues.
+
+Do not critique the draft as an implementation plan. Use it to choose the first focused interview question.
+
 ## Process
 
 1. Read `guidelines/project-defaults.md`.
-2. Receive the initial mod idea.
-3. Identify the most important unresolved concept-level question.
-4. Interview the project owner one question at a time.
-5. Record decisions, assumptions, boundaries, and open questions.
-6. Periodically summarize the current shared understanding.
-7. Resolve concept-level contradictions and ambiguities.
-8. Generate `workspace/documentation/concept-and-scope.md` as a complete draft.
-9. Present the draft for review and revise it until explicitly approved.
+2. Ask the project owner for a rough first draft of the mod idea.
+3. Receive the initial mod idea, rough design note, examples, or references.
+4. Identify the most important unresolved concept-level question.
+5. Interview the project owner one question at a time.
+6. Record decisions, assumptions, boundaries, and open questions.
+7. Periodically summarize the current shared understanding.
+8. Resolve concept-level contradictions and ambiguities.
+9. Generate `workspace/documentation/concept-and-scope.md` as a complete draft.
+10. Present the draft for review and revise it until explicitly approved.
 
 ## Output Artifact
 
