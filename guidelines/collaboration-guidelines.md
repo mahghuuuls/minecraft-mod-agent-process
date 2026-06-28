@@ -55,6 +55,14 @@ Explicit authorization is required for each of these actions:
 
 Authorization for one action does not authorize another. Do not use destructive Git operations without explicit permission. Preserve unrelated changes and report which repository was inspected or changed.
 
+During Implementation, after each completed issue or approved vertical slice, ask the project owner whether to create a commit before moving to the next issue. Follow the commit checkpoint rules in `stages/7-implementation.md`.
+
+Commit messages must be repo-facing by default:
+
+- Describe the actual repository change.
+- Do not reference workflow issue IDs, internal issue names, stage documents, or process-only context unless explicitly requested.
+- Assume a future reader has access to the Git repository but not the workflow artifacts.
+
 Publication to every approved distribution platform is performed manually by the project owner. Agents may prepare handoffs but may not upload or publish the mod.
 
 ## Completion Reporting
