@@ -30,6 +30,20 @@ This file is the authoritative source for collaboration, file-editing discipline
 - Report mistakes, uncertainty, and failed checks plainly.
 - Do not claim completion while required work or verification remains.
 
+## Workflow Feedback
+
+When the project owner corrects the agent, identifies friction, rejects a default, asks why the process is doing something, or points out a better way to run future mods, consider whether the interaction should be recorded in:
+
+```text
+workspace/documentation/workflow-feedback.md
+```
+
+Follow the workflow feedback log rules in `guidelines/process-control.md`.
+
+Do not let feedback logging derail the active task. Update the log at a natural checkpoint unless the process issue is blocking the current work.
+
+Do not edit versioned process files during mod development just because a feedback entry exists. Process file changes require Process Maintenance mode.
+
 ## File Changes
 
 - Inspect existing files and repository state before editing.
