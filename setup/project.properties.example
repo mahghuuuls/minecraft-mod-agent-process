@@ -12,7 +12,9 @@ project_directory_name=
 mod_id=
 display_name=
 public_mod_description=
+# Recommended default: com.<github-owner>.<mod-id>
 root_package=
+# Recommended default: <PascalCaseDisplayName>Mod
 main_class=
 mod_authors=
 minecraft_username=
@@ -30,6 +32,23 @@ template_repository_ref=
 # Documentation and collaboration preferences:
 public_documentation_style=player-facing
 commit_message_style=repo-facing-no-workflow-issue-references
+
+# Release handoff mode:
+# Allowed values: owner-managed-packaging, agent-managed-release-validation
+release_handoff_mode=agent-managed-release-validation
+
+# Release ownership matrix:
+# Allowed values: agent, owner, shared, deferred
+release_owner_readme=agent
+release_owner_changelog=agent
+release_owner_icon=owner
+release_owner_screenshots=owner
+release_owner_curseforge_upload=owner
+release_owner_release_jar_generation=agent
+release_owner_final_publication_verification=agent
+release_owner_dedicated_server_testing=owner
+release_owner_cleanroom_testing=owner
+release_owner_external_multiplayer_testing=owner
 
 # Optional project-specific overrides:
 # preferred_development_java_version=25
