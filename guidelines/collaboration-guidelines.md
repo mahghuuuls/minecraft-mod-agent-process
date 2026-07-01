@@ -68,12 +68,14 @@ Do not edit versioned process files during mod development because a feedback en
 - Explain the intended scope before making changes.
 - Preserve unrelated user changes.
 - Never revert work outside the current task.
-- Keep edits within the active repository, stage, issue, or approved maintenance scope.
+- Keep edits within the active repository, stage, issue, or approved mod-development scope.
 - Follow existing conventions unless an approved decision changes them.
 
 ## Git and External Actions
 
 Before a Git operation, identify the target repository and inspect its working tree. The process repository, runtime template, and mod repository have separate histories.
+
+During mod development, do not commit, push, or otherwise modify the outer process repository. Git changes belong only to the active mod repository unless the user is working in a separate process-improvement session outside this workflow.
 
 Explicit authorization is required for each of these actions:
 
