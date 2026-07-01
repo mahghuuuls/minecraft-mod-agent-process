@@ -30,6 +30,24 @@ This file is the authoritative source for collaboration, file-editing discipline
 - Report mistakes, uncertainty, and failed checks plainly.
 - Do not claim completion while required work or verification remains.
 
+## Project Vocabulary
+
+When the project owner uses vocabulary with project-specific meaning, consider whether it belongs in:
+
+```text
+workspace/documentation/glossary.md
+```
+
+Follow the glossary rules in `guidelines/process-control.md`.
+
+Ask for clarification when:
+
+- Two terms may refer to the same concept.
+- One term may refer to different concepts.
+- A term affects requirements, configuration, architecture, code naming, README copy, changelog copy, or player-facing behavior.
+
+Do not turn the glossary into a dictionary of obvious general terms. Update it at natural checkpoints unless terminology ambiguity is blocking the active work.
+
 ## Workflow Feedback
 
 When the project owner corrects the agent, identifies friction, rejects a default, asks why the process is doing something, or points out a better way to run future mods, consider whether the interaction should be recorded in:
