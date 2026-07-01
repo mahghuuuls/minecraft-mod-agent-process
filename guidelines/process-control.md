@@ -191,7 +191,7 @@ Create it from:
 setup/workflow-feedback-template.md
 ```
 
-Use this log to record friction, corrections, and improvement ideas discovered while using the workflow on a specific mod. The objective is to give the project owner a concise artifact they can later share during process-maintenance work.
+Use this log to record friction, corrections, and improvement ideas discovered while using the workflow on a specific mod. The objective is to give the project owner a concise artifact they can later share with a separate workflow-improvement session or another agent outside the active mod project.
 
 Record an entry when an interaction suggests that the workflow may need improvement, for example:
 
@@ -205,7 +205,7 @@ Record an entry when an interaction suggests that the workflow may need improvem
 
 Do not interrupt the active stage just to update this log unless the issue is blocking. Prefer updating it at natural checkpoints, such as after a correction, before stage approval, after an issue completes, or at the end of the session.
 
-Entries are observations, not approved process changes. Do not modify versioned workflow files during mod development unless the user explicitly switches to Process Maintenance mode.
+Entries are observations, not approved process changes. This workflow does not update itself. Do not modify versioned workflow files during mod development because a feedback entry exists.
 
 Each entry should include:
 
@@ -222,7 +222,7 @@ Each entry should include:
 - Evidence or example, if useful
 - Owner notes, if any
 
-Review this log when starting Process Maintenance work or when the owner asks to improve the workflow after finishing a mod.
+The mod-development agent only maintains the log. Process-repository changes must be handled separately outside the active mod-development workflow, using the feedback log as input when the owner chooses to do so.
 
 ## Approval Lifecycle
 
