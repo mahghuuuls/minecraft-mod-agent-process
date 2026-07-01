@@ -24,7 +24,8 @@ Use this mode when working on a specific mod:
 
 - Treat versioned process instructions and setup files as read-only.
 - Use ignored runtime paths under `workspace/` for project configuration, documentation, artwork, templates, and the active mod.
-- Follow the shared guidelines, approved setup, selected workflow, and active stage.
+- Follow the shared guidelines, approved setup, selected workflow, active stage, and project glossary when present.
+- Record project-specific vocabulary in `workspace/documentation/glossary.md` when it affects requirements, architecture, code naming, configuration, or public copy.
 - Record workflow friction, corrections, and improvement ideas in `workspace/documentation/workflow-feedback.md` when they arise.
 - Modify mod source only in the active repository under `workspace/project/`.
 - Treat `workspace/template/` as disposable source material.
@@ -79,26 +80,28 @@ For mod-development work, read in this order:
 1. `AGENTS.md`
 2. The core guideline files listed under **Instruction Ownership**
 3. `workspace/documentation/project-status.md`, when present
-4. `workspace/documentation/workflow-feedback.md`, when present
-5. `stages/0-project-setup.md` and its artifact when setup is required
-6. The selected file under `workflows/`
-7. The active stage under `stages/`, when the workflow invokes one
-8. Any specialized guideline explicitly referenced by the active workflow or stage
-9. The approved artifacts referenced by the workflow or stage
-10. The relevant implementation issue and source code, when applicable
+4. `workspace/documentation/glossary.md`, when present
+5. `workspace/documentation/workflow-feedback.md`, when present
+6. `stages/0-project-setup.md` and its artifact when setup is required
+7. The selected file under `workflows/`
+8. The active stage under `stages/`, when the workflow invokes one
+9. Any specialized guideline explicitly referenced by the active workflow or stage
+10. The approved artifacts referenced by the workflow or stage
+11. The relevant implementation issue and source code, when applicable
 
 Do not silently resolve contradictions between sources. Follow `guidelines/process-control.md`.
 
 ## Instruction Ownership
 
 - `guidelines/project-defaults.md`: stable defaults for every mod.
-- `guidelines/process-control.md`: setup, workflow and stage status, approval, artifacts, workflow feedback, and backward transitions.
+- `guidelines/process-control.md`: setup, workflow and stage status, approval, artifacts, project glossary, workflow feedback, and backward transitions.
 - `guidelines/collaboration-guidelines.md`: communication, editing, Git authorization, workflow feedback behavior, and completion reporting.
 - `guidelines/coding-standards.md`: implementation and verification conventions.
 - Specialized guideline files under `guidelines/`: task-specific instructions read only when referenced.
 - `workflows/*.md`: scenario-specific routing and behavior.
 - `setup/manual-workspace-setup.md`: optional human-operated workspace configuration.
 - `setup/initialize-project.md`: new-repository initialization procedure used later.
+- `setup/glossary-template.md`: template for the project-specific glossary.
 - `setup/workflow-feedback-template.md`: template for the project-specific feedback log.
 - `stages/*.md`: setup and reusable development-stage responsibilities.
 
@@ -106,4 +109,4 @@ When instructions overlap, the file that owns the subject is authoritative. Othe
 
 ## Execution
 
-Complete or carry forward Project Setup, then resume or obtain approval for the applicable workflow. Follow one checkpoint or stage at a time, update `project-status.md`, record workflow feedback when relevant, and stop whenever owner approval is required. Never advance automatically.
+Complete or carry forward Project Setup, then resume or obtain approval for the applicable workflow. Follow one checkpoint or stage at a time, update `project-status.md`, maintain the project glossary when relevant, record workflow feedback when relevant, and stop whenever owner approval is required. Never advance automatically.
