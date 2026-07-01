@@ -1,6 +1,6 @@
 # Process Control
 
-This file is the authoritative source for workflow and stage status, approvals, artifact locations, workflow feedback, and backward transitions.
+This file is the authoritative source for workflow and stage status, approvals, artifact locations, project glossary, workflow feedback, and backward transitions.
 
 ## Project Setup
 
@@ -68,6 +68,7 @@ Create it when the first workflow begins. Record:
 - Mod name and active repository path when known
 - Active workflow and workflow status
 - Approved baseline version and source revision, when available
+- Glossary status and approved glossary artifact, when present
 - Active cycle ID, when applicable
 - Artifact root
 - Current stage or workflow checkpoint
@@ -88,6 +89,42 @@ Use these workflow and stage statuses:
 Record the disposition of each reusable stage for the active workflow. Dispositions explain routing and do not replace the status of an invoked stage. Each workflow defines its allowed disposition values.
 
 Implementation issue statuses are defined by the Implementation Plan stage.
+
+## Project Glossary
+
+Maintain a project-specific glossary at:
+
+```text
+workspace/documentation/glossary.md
+```
+
+Create it from:
+
+```text
+setup/glossary-template.md
+```
+
+Use the glossary to define project-specific vocabulary that affects requirements, behavior, configuration, architecture, code naming, public documentation, or owner communication.
+
+Do not use it as a dictionary for every general Minecraft, programming, or workflow term. Add a term only when inconsistent vocabulary could create ambiguity, duplicate concepts, misleading public copy, incorrect code names, or conflicting requirements.
+
+Record a glossary entry when:
+
+- The owner uses a term with project-specific meaning.
+- Two terms appear to mean the same thing.
+- One term appears to have multiple possible meanings.
+- A term affects requirement wording, config names, code naming, architecture, README copy, changelog copy, or player-facing behavior.
+- A term is deprecated but may still appear in older artifacts, code, config, or public copy.
+
+Use these term statuses:
+
+- **Candidate:** Captured but not yet approved.
+- **Approved:** Confirmed by the project owner or by approval of the artifact that depends on it.
+- **Deprecated:** Replaced by another approved term but retained for traceability.
+
+When a stage depends on a term, approved glossary wording should be used consistently in that stage's artifact. If a term is ambiguous and affects the current stage, clarify it before approving the stage.
+
+Change cycles may update the canonical glossary when new behavior introduces new terms or changes approved vocabulary. Cycle folders must not contain full glossary copies; they should reference the canonical glossary and record only change-specific rationale.
 
 ## Stage Transition Briefing
 
@@ -224,7 +261,7 @@ Canonical project documents always remain under:
 workspace/documentation/
 ```
 
-They describe the current approved project state and include project setup, concept, feasibility, requirements, architecture, project initialization or baseline, and project status.
+They describe the current approved project state and include project setup, concept, feasibility, requirements, architecture, glossary, project initialization or baseline, and project status.
 
 The selected workflow defines `<artifact-root>`:
 
@@ -240,10 +277,10 @@ Mod source, repository documentation, release assets, and build outputs belong i
 
 All reusable process artifacts are Markdown unless another format is explicitly required.
 
-Approved canonical artifacts are authoritative for project-specific decisions. Later artifacts should reference stable requirement, architecture, or issue identifiers rather than copying full content. A cycle updates affected canonical documents and records only the change and traceability evidence in its own directory.
+Approved canonical artifacts are authoritative for project-specific decisions. Later artifacts should reference stable requirement, architecture, glossary, or issue identifiers rather than copying full content. A cycle updates affected canonical documents and records only the change and traceability evidence in its own directory.
 
 Omit nonapplicable sections and identify unresolved decisions explicitly. Never invent information to make an artifact appear complete.
 
 ## Change Control
 
-A stage may refine only decisions it owns. Changes affecting an earlier stage follow the backward-transition procedure. Operational properties may override reusable defaults but may not silently override approved behavior, architecture, compatibility, licensing, or distribution decisions.
+A stage may refine only decisions it owns. Changes affecting an earlier stage follow the backward-transition procedure. Operational properties may override reusable defaults but may not silently override approved behavior, architecture, compatibility, licensing, vocabulary, or distribution decisions.
