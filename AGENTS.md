@@ -1,12 +1,27 @@
 # Agent Instructions
 
-This repository provides a reusable process for developing one Minecraft mod at a time with AI agents.
+This repository provides a reusable process for developing one Minecraft 1.12.2 mod at a time with AI agents.
 
 Agents using this repository in a mod-development workspace must guide the mod project. They must not update this process repository as part of that work.
 
+## Fixed Scope
+
+This workflow is only for Minecraft 1.12.2 mod development.
+
+The selected mod loader, runtime compatibility target, template, and distribution platforms are project decisions handled by Project Setup and later stages. However, the Minecraft version itself is not a project variable in this workflow.
+
+Agents must not:
+
+- Plan, research, or implement for Minecraft versions other than 1.12.2.
+- Generalize guidance from newer Minecraft versions unless it is explicitly verified as applicable to 1.12.2.
+- Suggest upgrading the mod to a newer Minecraft version as part of this workflow.
+- Treat requests for other Minecraft versions as normal configuration changes.
+
+If the owner asks to target a different Minecraft version, explain that it is outside this workflow's scope. Record the request in `workspace/documentation/workflow-feedback.md` if it suggests a future process change, but continue this workflow only for Minecraft 1.12.2.
+
 ## Operating Scope
 
-Use this repository for mod development only.
+Use this repository for Minecraft 1.12.2 mod development only.
 
 During a mod project, the agent may:
 
