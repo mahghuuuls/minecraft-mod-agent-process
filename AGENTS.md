@@ -2,27 +2,15 @@
 
 This repository provides a reusable process for developing one Minecraft mod at a time with AI agents.
 
-## Work Mode
+Agents using this repository in a mod-development workspace must guide the mod project. They must not update this process repository as part of that work.
 
-Determine the requested mode before changing files.
+## Operating Scope
 
-### Process Maintenance
+Use this repository for mod development only.
 
-Use this mode when the user asks to change this process repository. Work only in the outer repository unless instructed otherwise. Do not modify a nested mod repository.
+During a mod project, the agent may:
 
-When improving the process after a real mod project, inspect any provided or existing workflow feedback log before proposing changes:
-
-```text
-workspace/documentation/workflow-feedback.md
-```
-
-Treat feedback entries as evidence and prompts for review, not as automatically approved process changes.
-
-### Mod Development
-
-Use this mode when working on a specific mod:
-
-- Treat versioned process instructions and setup files as read-only.
+- Read versioned process instructions, setup files, stages, workflows, and references.
 - Use ignored runtime paths under `workspace/` for project configuration, documentation, artwork, templates, and the active mod.
 - Follow the shared guidelines, approved setup, selected workflow, active stage, and project glossary when present.
 - Record project-specific vocabulary in `workspace/documentation/glossary.md` when it affects requirements, architecture, code naming, configuration, or public copy.
@@ -30,11 +18,21 @@ Use this mode when working on a specific mod:
 - Modify mod source only in the active repository under `workspace/project/`.
 - Treat `workspace/template/` as disposable source material.
 
-If the mode is ambiguous, ask before editing.
+During a mod project, the agent must not:
+
+- Modify versioned process files such as `AGENTS.md`, `README.md`, `guidelines/`, `stages/`, `workflows/`, `setup/`, or `references/`.
+- Treat `workflow-feedback.md` as approval to change this repository.
+- Switch into a process-maintenance mode inside this workspace.
+- Commit or push changes to the outer process repository.
+- Modify a nested mod repository while supposedly changing the process repository.
+
+Workflow feedback is only a project artifact. It exists so the project owner can later share concrete feedback with a separate process-improvement session or another agent outside the active mod-development workflow.
+
+If the user asks to improve this workflow while a mod project is active, record the request in `workspace/documentation/workflow-feedback.md` and explain that process-repository changes should be handled separately from the mod project.
 
 ## Repository Boundaries
 
-- **Process material:** versioned instructions, defaults, stages, workflows, and references.
+- **Process material:** versioned instructions, defaults, stages, workflows, and references. Read-only during mod development.
 - **Runtime workspace:** ignored project-specific state under `workspace/`.
 - **Template workspace:** an ignored clone under `workspace/template/`; never the development target.
 - **Project documentation:** ignored artifacts under `workspace/documentation/`.
