@@ -60,7 +60,7 @@ Follow the workflow feedback log rules in `guidelines/process-control.md`.
 
 Do not let feedback logging derail the active task. Update the log at a natural checkpoint unless the process issue is blocking the current work.
 
-Do not edit versioned process files during mod development just because a feedback entry exists. Process file changes require Process Maintenance mode.
+Do not edit versioned process files during mod development because a feedback entry exists. This workflow does not update itself. Process-repository changes must be handled separately outside the active mod-development workflow.
 
 ## File Changes
 
