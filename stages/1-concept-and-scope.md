@@ -13,6 +13,7 @@ Establish a shared understanding of what the mod should accomplish and where its
 - The initial mod idea or problem statement
 - Any rough design notes supplied by the project owner
 - Any examples or references supplied by the project owner
+- `workspace/documentation/glossary.md`, when present
 
 ## Objectives
 
@@ -27,6 +28,7 @@ Establish:
 - What would make the mod successful
 - Assumptions requiring later confirmation
 - Technical uncertainties requiring Feasibility Research
+- Candidate glossary terms that have project-specific meaning
 
 ## In Scope
 
@@ -40,6 +42,7 @@ Establish:
 - Concept-level examples
 - Assumptions and open questions
 - Definition of success
+- Candidate project terminology
 
 ## Out of Scope
 
@@ -71,6 +74,9 @@ Act as an alignment interviewer.
 - Present alternative interpretations when something is ambiguous.
 - Distinguish essential features from optional ideas.
 - Explore what is explicitly outside the project scope.
+- Capture candidate glossary terms when the owner uses project-specific vocabulary.
+- Ask whether similar terms are synonyms or distinct concepts when the distinction could affect scope.
+- Ask whether one term has multiple meanings when that ambiguity could affect scope.
 - Do not introduce features that the project owner did not request.
 - Do not investigate feasibility or propose technical solutions.
 - Record technical uncertainties for Feasibility Research.
@@ -97,18 +103,34 @@ For small mods, a paragraph may be enough. For complex mods, recommend a rough d
 
 Do not critique the draft as an implementation plan. Use it to choose the first focused interview question.
 
+## Glossary Handling
+
+Use `workspace/documentation/glossary.md` for project-specific vocabulary.
+
+If the glossary does not exist and the discussion introduces terms with project-specific meaning, create it from:
+
+```text
+setup/glossary-template.md
+```
+
+During this stage, glossary entries may remain **Candidate**. They should capture the owner's wording, possible meanings, and questions for later clarification. Do not force every candidate term to become fully approved during Concept and Scope unless the term affects the project boundary.
+
+Do not add ordinary Minecraft, programming, or workflow terms unless this project uses them in a special way.
+
 ## Process
 
 1. Read `guidelines/project-defaults.md`.
-2. Ask the project owner for a rough first draft of the mod idea.
-3. Receive the initial mod idea, rough design note, examples, or references.
-4. Identify the most important unresolved concept-level question.
-5. Interview the project owner one question at a time.
-6. Record decisions, assumptions, boundaries, and open questions.
-7. Periodically summarize the current shared understanding.
-8. Resolve concept-level contradictions and ambiguities.
-9. Generate `workspace/documentation/concept-and-scope.md` as a complete draft.
-10. Present the draft for review and revise it until explicitly approved.
+2. Read `workspace/documentation/glossary.md`, when present.
+3. Ask the project owner for a rough first draft of the mod idea.
+4. Receive the initial mod idea, rough design note, examples, or references.
+5. Identify the most important unresolved concept-level question.
+6. Interview the project owner one question at a time.
+7. Record decisions, assumptions, boundaries, open questions, and candidate glossary terms.
+8. Periodically summarize the current shared understanding.
+9. Resolve concept-level contradictions and ambiguities.
+10. Create or update `workspace/documentation/glossary.md` when project-specific vocabulary appears.
+11. Generate `workspace/documentation/concept-and-scope.md` as a complete draft.
+12. Present the draft for review and revise it until explicitly approved.
 
 ## Output Artifact
 
@@ -127,7 +149,8 @@ Produce a Markdown document named `workspace/documentation/concept-and-scope.md`
 11. **Assumptions**
 12. **Open Concept Questions**
 13. **Questions for Feasibility Research**
-14. **Definition of Success**
+14. **Glossary Notes**
+15. **Definition of Success**
 
 Omit sections without relevant content instead of inventing information.
 
@@ -143,8 +166,8 @@ This stage is complete when:
 - In-scope and out-of-scope boundaries are explicit.
 - No unresolved concept-level contradictions remain.
 - Technical uncertainties are recorded for Feasibility Research.
+- Project-specific terms that affect scope are clarified or recorded as glossary candidates.
 - The project owner explicitly approves the final understanding.
 - `workspace/documentation/concept-and-scope.md` has been generated and explicitly approved.
 
-Completion does not require proving technical feasibility or defining detailed behavior.
-
+Completion does not require proving technical feasibility, defining detailed behavior, or approving every candidate glossary term.
