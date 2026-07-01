@@ -4,7 +4,7 @@
 
 Prepare and approve simple player-facing release materials for the implemented mod before technical packaging begins.
 
-This stage is about how the mod is presented to players and modpack authors. It does not build, inspect, checksum, or validate the release JAR, and it does not prepare live upload steps.
+This stage is about how the mod is presented to players and modpack authors. It does not build, inspect, checksum, or validate the release JAR, and it does not prepare live platform-submission steps.
 
 ## Main Question
 
@@ -15,6 +15,7 @@ This stage is about how the mod is presented to players and modpack authors. It 
 - `workspace/documentation/project-setup.md`, including the release ownership matrix and public documentation style
 - `workspace/documentation/concept-and-scope.md`
 - `workspace/documentation/requirements.md`
+- `workspace/documentation/glossary.md`, when present
 - `<artifact-root>/implementation-plan.md`
 - Completed issues under `<artifact-root>/issues/`
 - The completed project under `workspace/project/<project_directory_name>/`
@@ -33,6 +34,7 @@ Establish:
 - A high-level configuration summary when the mod has user-facing configuration
 - Player-facing multiplayer, client/server, dependency, or compatibility notes when normal players need them
 - Optional publication-asset decisions for icon and screenshots without blocking README, changelog, or packaging when owner-managed or deferred
+- Public wording that uses approved glossary terms consistently when the glossary applies
 - An internal presentation record that separates public copy from technical evidence and unresolved limitations
 
 ## In Scope
@@ -43,6 +45,7 @@ Establish:
 - Summarize implemented features in player language
 - Summarize configuration at a high level when applicable
 - Include player-facing multiplayer or client/server notes when they affect installation or use
+- Use approved glossary terms consistently in public copy
 - Record known limitations in public materials only when normal players must know them before installing or using the mod
 - Record icon and screenshot ownership, deferral, or agent-managed work
 - Follow icon or screenshot workflows only when those areas are agent-managed or explicitly assigned
@@ -60,20 +63,24 @@ Do not:
 - Perform release validation or clean-instance testing
 - Include build evidence, bytecode details, validation logs, QA-style usage steps, or internal test reports in the public README
 - Include redundant platform requirements that the distribution platform already displays unless players need the information to decide whether to install
-- Research upload mechanics, live project fields, publication-page setup, or final platform field choices unless explicitly assigned by the owner
+- Research platform-submission mechanics, live project fields, page setup, or final platform field choices unless explicitly assigned by the owner
 - Prepare screenshots or icon work when those areas are owner-managed
 - Block README, changelog, or packaging approval because an owner-managed icon or screenshot is not ready
 - Include Cleanroom caveats unless they affect normal player installation, compatibility expectations, or usage decisions
-- Upload assets or files to a distribution platform
+- Send assets or files to a distribution platform
 - Publish a release
 
-An implementation defect returns to Implementation. An inaccurate public claim returns to the stage that owns the underlying behavior or decision.
+An implementation defect returns to Implementation. An inaccurate public claim returns to the stage that owns the underlying behavior or decision. A terminology conflict returns to the glossary-owning stage that introduced or approved the term.
 
 ## Desired AI Behavior
 
 Act as a player-facing release editor.
 
 - Use concise, plain player-facing language.
+- Read and use approved glossary terms when present.
+- Preserve preferred public terminology from the glossary.
+- Ask before changing an approved term in public copy.
+- Record new or changed public-facing terms in the glossary when they affect how players, modpack authors, config users, or later documents should refer to a feature.
 - Assume the public README may be reused as mod-page information.
 - Describe only implemented and approved behavior.
 - Explain why a player would want the mod before listing technical details.
@@ -83,11 +90,13 @@ Act as a player-facing release editor.
 - Follow the release ownership matrix strictly.
 - Treat icon and screenshot work as optional publication assets, not as blockers for README, changelog, or packaging unless explicitly agent-managed and required by the owner.
 - Ask one focused question at a time when public wording, limitations, or asset ownership needs owner input.
-- Never upload or publish.
+- Never submit files to distribution platforms or publish releases.
 
 ## Public README Guidance
 
 When the approved public documentation style is `player-facing`, the README should read like a concise mod-page description.
+
+Use approved glossary terms for feature names, configuration concepts, compatibility notes, and player-facing behavior. Do not introduce synonyms merely for variety when consistency matters.
 
 Include only sections that help normal players or modpack authors, such as:
 
@@ -125,7 +134,7 @@ Use concise categories such as:
 - Compatibility
 - Known Issues
 
-Exclude internal refactors, implementation history, and workflow details unless they affect users.
+Use approved glossary terms for feature names and player-visible behavior. Exclude internal refactors, implementation history, and workflow details unless they affect users.
 
 ## Optional Publication Assets
 
@@ -135,7 +144,7 @@ Use the release ownership matrix from Project Setup.
 
 Stage 8 supports these icon paths:
 
-1. **Owner Provides Icon:** The owner creates, selects, or uploads the icon outside the agent workflow.
+1. **Owner Provides Icon:** The owner creates, selects, or provides the icon outside the agent workflow.
 2. **Agent Helps Create Icon:** The owner explicitly assigns icon creation or revision to the agent.
 3. **Icon Deferred:** Icon work is intentionally postponed and does not block the rest of the release handoff.
 
@@ -170,7 +179,7 @@ Screenshot paths are equivalent:
 - **Agent Helps Prepare Screenshots**
 - **Screenshots Deferred**
 
-If screenshots are owner-managed or deferred, do not plan, request, capture, select, or prepare screenshots. If screenshots are explicitly assigned to the agent, they must show actual implemented behavior. Do not substitute generated imagery for gameplay or UI evidence.
+If screenshots are owner-managed or deferred, do not plan, request, capture, select, or prepare screenshots. If screenshots are explicitly assigned to the agent, they must show actual implemented behavior.
 
 ## Internal Presentation Record
 
@@ -179,10 +188,11 @@ If screenshots are owner-managed or deferred, do not plan, request, capture, sel
 Use it to record:
 
 - Source implementation evidence supporting public claims
-- Ownership decisions for README, changelog, icon, screenshots, upload, publication, and validation
+- Ownership decisions for README, changelog, icon, screenshots, platform submission, publication, and validation
 - Whether icon and screenshots are owner-provided, agent-managed, or deferred
 - Known limitations and whether they are public-facing or internal
 - Deferred owner-managed assets or publication actions
+- Public terminology decisions and glossary updates
 - Questions that Packaging and Release Validation must consider
 
 Do not use the internal record as public copy.
@@ -191,18 +201,20 @@ Do not use the internal record as public copy.
 
 1. Confirm that Implementation is approved.
 2. Read the release ownership matrix and public documentation style from Project Setup.
-3. Review completed issues, approved behavior, and known limitations.
-4. Identify which public materials are agent-managed.
-5. Draft or update player-facing README content when agent-managed.
-6. Draft or update player-facing changelog content when agent-managed.
-7. Prepare a CurseForge-style summary or description only as reusable public copy, not as upload-field research.
-8. Add high-level configuration and player-facing multiplayer/client/server notes when applicable.
-9. Record icon and screenshot paths as owner-provided, agent-managed, or deferred.
-10. Follow icon or screenshot workflows only when those areas are agent-managed or explicitly assigned.
-11. Check every public claim against approved implementation evidence.
-12. Keep technical evidence and internal limitations in `release-presentation.md` rather than public README copy.
-13. Present public materials and the internal presentation record for approval.
-14. Revise until explicitly approved.
+3. Read `workspace/documentation/glossary.md`, when present.
+4. Review completed issues, approved behavior, and known limitations.
+5. Identify which public materials are agent-managed.
+6. Draft or update player-facing README content when agent-managed.
+7. Draft or update player-facing changelog content when agent-managed.
+8. Prepare a CurseForge-style summary or description only as reusable public copy, not as platform-field research.
+9. Add high-level configuration and player-facing multiplayer/client/server notes when applicable.
+10. Record icon and screenshot paths as owner-provided, agent-managed, or deferred.
+11. Follow icon or screenshot workflows only when those areas are agent-managed or explicitly assigned.
+12. Check every public claim against approved implementation evidence and approved glossary terminology.
+13. Update `workspace/documentation/glossary.md` when release copy approves, refines, or deprecates public-facing project terminology.
+14. Keep technical evidence and internal limitations in `release-presentation.md` rather than public README copy.
+15. Present public materials and the internal presentation record for approval.
+16. Revise until explicitly approved.
 
 ## Output Artifacts
 
@@ -238,7 +250,8 @@ It should contain:
 11. Public-facing known limitations
 12. Internal technical notes and validation gaps excluded from public copy
 13. Claims checked against implementation evidence
-14. Owner approvals
+14. Glossary terms used or updated
+15. Owner approvals
 
 ## Completion Criteria
 
@@ -247,11 +260,13 @@ This stage is complete when:
 - Public README or description copy is concise, player-facing, and approved.
 - Changelog is concise, player-facing, and approved.
 - Feature, configuration, and multiplayer/client/server notes match implemented behavior.
+- Public wording uses approved glossary terms consistently when the glossary applies.
+- Public-facing glossary updates introduced by release copy are recorded.
 - Icon and screenshot paths are recorded as owner-provided, agent-managed, or deferred.
 - Owner-managed or deferred icon and screenshot work does not block README, changelog, or packaging.
 - Agent-managed icon or screenshot work, if any, is approved or explicitly deferred by the owner.
-- Owner-managed upload and publication responsibilities are respected.
-- Public materials do not include build evidence, bytecode details, QA-style usage steps, internal validation findings, redundant platform requirements, upload mechanics, or irrelevant Cleanroom caveats.
+- Owner-managed platform submission and publication responsibilities are respected.
+- Public materials do not include build evidence, bytecode details, QA-style usage steps, internal validation findings, redundant platform requirements, platform-submission mechanics, or irrelevant Cleanroom caveats.
 - Technical notes are kept in `release-presentation.md`, not public README copy.
 - Every public claim is supported by approved implementation evidence.
 - `<artifact-root>/release-presentation.md` is generated and approved.
